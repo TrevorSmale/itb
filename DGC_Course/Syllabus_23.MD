@@ -15,12 +15,12 @@ This course is designed to give uninitiated participants basic working proficien
 
 ## Course materials
 
-* [Course Syllabus](DGC_Course/Syllabus_23.MD)
-* [Installation & Testing instructions](DGC_Course/Install_and_Test.MD)
-* [Hardware Requirements](DGC_Course/Hardware_requirements.MD)
-* [Course Session #1](DGC_Course/Session1.MD)
-* [Course Session #2](DGC_Course/Session2.MD)
-* [Basic Hotkeys](DGC_Course/Basic_Hotkeys.MD)
+* [Course Syllabus](Syllabus_23.MD)
+* [Installation & Testing instructions](Install_and_Test.MD)
+* [Hardware Requirements](Hardware_requirements.MD)
+* [Course Session #1](Session1.MD)
+* [Course Session #2](Session2.MD)
+* [Basic Hotkeys](Basic_Hotkeys.MD)
 
 ## Course schedule
 
