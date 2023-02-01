@@ -15,7 +15,7 @@ This course is designed to give uninitiated participants basic working proficien
 
 ## Course materials
 
-* [Course Syllabus](DGC_Course/DGC_Syllabus_23.MD)
+* [Course Syllabus](DGC_Course/Syllabus_23.MD)
 * [Installation & Testing instructions](DGC_Course/Install_and_Test.MD)
 * [Hardware Requirements](DGC_Course/Hardware_requirements.MD)
 * [Course Session #1](DGC_Course/Session1.MD)
