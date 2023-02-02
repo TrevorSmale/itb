@@ -20,7 +20,7 @@ This course is designed to give uninitiated participants basic working proficien
 * [Hardware Requirements](Hardware_requirements.MD)
 * [Course Session #1](Session1.MD)
 * [Course Session #2](Session2.MD)
-* [Basic Hotkeys](Basic_Hotkeys.MD)
+* [Basic Hotkeys](Shortcuts.MD)
 
 ## Course schedule
 
