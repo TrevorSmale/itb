@@ -24,27 +24,40 @@ This course is designed to give uninitiated participants basic working proficien
 
 ## Course schedule
 
+TBA
+
 ### Duration
 
 This course will take a total of 6 hours split into 2 X 3 hour sessions.
 
 ### Session #1 (Getting Familiar)
 
-* Part A (Course Intro)
-* Part B (Blender Overview)
-* 
+* Course Intro
+* History
+* FOSS ideology
+* 3D Graphics
+* User Interface Layout
+* Looking through each UI component
+* Shortcuts
+* Scene Management
+* Adding Objects
+* Editing Objects
 
 ### Session #2 (First rendered Scene)
 
 * Review of previous session
-* 
+* 1st Modeling project 
+* 2nd Modeling project
+* Camera Placement
+* Rendering
 
 ### Objectives
 
-Learning the user interface
-Keyboard shortcuts
-Navigation of the scene
-Adding elements to the scene
-Editing elements within the scene
+Understanding the user interface
+Understanding important shortcuts
+Understanding 3D graphics principles
+Understanding Polygon model creation
+Understanding Scene management
+
 
 

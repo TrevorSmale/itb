@@ -33,6 +33,15 @@ A short list of heavily used keyboard shortcuts baked into Blender by default.
 |**Cancel Operation**|ESC|ESC|ESC|X|X|X|X|
 |**Add Item to Scene**|SHIFT|SHIFT|SHIFT|+|A|X|X|
 
-
 # Edit Mode Shortcuts
 
+|Description|Mac Modifier Key|Windows Modifier Key|Linux Modifier Key| |Key #1| |Key #2|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|**Select All**|Command (⌘)|Control (Ctrl)|Control (Ctrl)|+|A|X|X|
+|**Vertex Select**|X|X|X|X|1|+|LMB|
+|**Edge Select**|X|X|X|+|2|+|LMB|
+|**Face Select**|X|X|X|+|3|+|LMB|
+|**Inset Edge**|X|X|X|+|S|X|X|
+|**Bevel Edge**|CTRL|CTRL|CTRL|+|B|X|X|
+|**Knife Tool**|X|X|X|X|K|X|X|
+|**Loop Cut**|Command (⌘)|Control (Ctrl)|Control (Ctrl)|+|R|X|X|
