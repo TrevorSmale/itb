@@ -167,11 +167,16 @@
 |Subject|Shortcut / Link|5m|
 |:---:|:---:|:---:|
 |**Intro**|[LINK to Manual](https://docs.blender.org/manual/en/latest/editors/3dview/controls/pivot_point/active_element.html?highlight=edit+mode “Manual”)| |
-|**Review Polygon Mesh**|https://en.wikipedia.org/wiki/Polygon_mesh| |
+|**Review Polygon Mesh**|[LINK to Wiki](https://en.wikipedia.org/wiki/Polygon_mesh "Wiki")| |
 |**Vertex Select**|1| |
 |**Edge Select**|2| |
 |**Face Select**|3| |
 
+## Edit Mode Toolbar
+
+|Subject|Shortcut / Link|10m|
+|:---:|:---:|:---:|
+|**Intro**|[LINK to Wiki](https://docs.blender.org/manual/en/latest/modeling/meshes/tools/toolbar.html#mesh-toolbar-index “Manual”)| |
 
 
 
