@@ -31,23 +31,23 @@
 
 |Subject|Shortcut / Link|5m|
 |:---:|:---:|:---:|
-|**Modelling**|[LINK to Wiki](https://en.wikipedia.org/wiki/Polygonal_modeling/ “Polygonal Repo”| |
-|**Sculpting**|[LINK to Blender Manual](https://www.blender.org/features/sculpting/ “Blender Manual”| |
-|**Texturing**|[LINK to Wikipedia](https://en.wikipedia.org/wiki/Texture_mapping/ “Wiki”| |
-|**Animation & Rigging**|[LINK to Blender Info Page](https://www.blender.org/features/animation/ “Blender Page”| |
+|**Modelling**|[LINK to Wiki](https://en.wikipedia.org/wiki/Polygonal_modeling “Polygonal Repo”)| |
+|**Sculpting**|[LINK to Blender Manual](https://www.blender.org/features/sculpting “Blender Manual”)| |
+|**Texturing**|[LINK to Wikipedia](https://en.wikipedia.org/wiki/Texture_mapping “Wiki”)| |
+|**Animation & Rigging**|[LINK to Blender Info Page](https://www.blender.org/features/animation “Blender Page”)| |
 
 ## Brief Overview of 3D Graphics
 
 |Subject|Shortcut / Link|15m|
 |:----|:----|:----|
-|**Intro**|[LINK to Wikipedia](https://en.wikipedia.org/wiki/Polygon_mesh/ “Wiki”| |
-|**Normals**|[LINK to Wikipedia](https://en.wikipedia.org/wiki/Normal_(geometry)/ “Wiki”| |
+|**Intro**|[LINK to Wikipedia](https://en.wikipedia.org/wiki/Polygon_mesh “Wiki”)| |
+|**Normals**|[LINK to Wikipedia](https://en.wikipedia.org/wiki/Normal_(geometry) “Wiki”)| |
 |**Mesh Types**|Demo| |
-|**Shaders**|[LINK to Wikipedia](https://en.wikipedia.org/wiki/Shader/ “Wiki”| |
-|**Texture Mapping**|[LINK to Wikipedia](https://en.wikipedia.org/wiki/Texture_mapping/ “Wiki”| |
-|**UV Mapping**|[LINK to Wikipedia](https://en.wikipedia.org/wiki/UV_mapping/ “Wiki”| |
-|**Displacement Mapping**|[LINK to Wikipedia](https://en.wikipedia.org/wiki/Displacement_mapping/ “Wiki”| |
-|**RayTracing**|[LINK to Wikipedia](https://en.wikipedia.org/wiki/Ray_tracing_(graphics)/ “Wiki”| |
+|**Shaders**|[LINK to Wikipedia](https://en.wikipedia.org/wiki/Shader/ “Wiki”)| |
+|**Texture Mapping**|[LINK to Wikipedia](https://en.wikipedia.org/wiki/Texture_mapping “Wiki”)| |
+|**UV Mapping**|[LINK to Wikipedia](https://en.wikipedia.org/wiki/UV_mapping “Wiki”)| |
+|**Displacement Mapping**|[LINK to Wikipedia](https://en.wikipedia.org/wiki/Displacement_mapping “Wiki”)| |
+|**RayTracing**|[LINK to Wikipedia](https://en.wikipedia.org/wiki/Ray_tracing_(graphics) “Wiki”)| |
 
 ## First Steps
 
@@ -97,7 +97,7 @@
 |Subject|Shortcut / Link |10m|
 |:---:|:---:|:---:|
 |**Hide Show Sidebar**|N or Click Tab| |
-|**About**|[LINK to Page](https://docs.blender.org/manual/en/latest/interface/window_system/regions.html#sidebar “Manual”| |
+|**About**|[LINK to Page](https://docs.blender.org/manual/en/latest/interface/window_system/regions.html#sidebar “Manual”)| |
 |**Item Menu**|Demo| |
 |**Tool Menu**|Demo| |
 |**View Menu**|Demo| |
@@ -109,7 +109,7 @@
 |Subject|Shortcut|10m|
 |:---:|:---:|:---:|
 |**Hide Show Tool Bar**|T or Click Tab| |
-|**About**|[LINK to Page](https://docs.blender.org/manual/en/latest/interface/tool_system.html#ui-region-toolbar “Manual”| |
+|**About**|[LINK to Page](https://docs.blender.org/manual/en/latest/interface/tool_system.html#ui-region-toolbar “Manual”)| |
 |**Selection Tool**|Demo| |
 |**View Menu**|Demo| |
 |**Move**|Demo| |
@@ -132,7 +132,7 @@
 
 |Subject|Shortcut / Link|5m|
 |:---:|:---:|:---:|
-|**Intro**|[LINK to Manual](https://docs.blender.org/manual/en/latest/scene_layout/view_layers/introduction.html?highlight=outliner “Manual”| |
+|**Intro**|[LINK to Manual](https://docs.blender.org/manual/en/latest/scene_layout/view_layers/introduction.html?highlight=outliner “Manual”)| |
 |**Adding scene items**|SHIFT + A| |
 |**Selecting multiple items**|Shift + LMB| |
 |**Creating a collection**|M| |
@@ -142,7 +142,7 @@
 
 |Subject|Shortcut / Link|5m|
 |:---:|:---:|:---:|
-|**Intro**|[LINK to Manual]https://docs.blender.org/manual/en/latest/interface/window_system/areas.html?highlight=areas/ “Manual”| |
+|**Intro**|[LINK to Manual](https://docs.blender.org/manual/en/latest/interface/window_system/areas.html?highlight=areas/ “Manual”)| |
 |**Resizing**|RMB on edge / Demo| |
 |**Splitting**|RMB on edge / Demo| |
 |**Joining**|RMB on edge / Demo| |
@@ -152,7 +152,7 @@
 
 |Subject|Shortcut / Link|15m|
 |:---:|:---:|:---:|
-|**Intro**|[LINK to Manual]https://docs.blender.org/manual/en/latest/editors/index.html “Manual”| |
+|**Intro**|[LINK to Manual](https://docs.blender.org/manual/en/latest/editors/index.html “Manual”)| |
 |**Upper Left Corner**|Demo| |
 |**Touring Editor Types**|Demo| |
 
@@ -160,13 +160,13 @@
 
 |Subject|Shortcut / Link|5m|
 |:---:|:---:|:---:|
-|**Intro**|[LINK to Manual]https://docs.blender.org/manual/en/latest/interface/window_system/workspaces.html?highlight=workspaces/ “Manual”| |
+|**Intro**|[LINK to Manual](https://docs.blender.org/manual/en/latest/interface/window_system/workspaces.html?highlight=workspaces/ “Manual”)| |
 
 ## Edit Mode
 
 |Subject|Shortcut / Link|5m|
 |:---:|:---:|:---:|
-|**Intro**|[LINK to Manual]https://docs.blender.org/manual/en/latest/editors/3dview/controls/pivot_point/active_element.html?highlight=edit+mode “Manual”| |
+|**Intro**|[LINK to Manual](https://docs.blender.org/manual/en/latest/editors/3dview/controls/pivot_point/active_element.html?highlight=edit+mode “Manual”)| |
 |**Review Polygon Mesh**|https://en.wikipedia.org/wiki/Polygon_mesh| |
 |**Vertex Select**|1| |
 |**Edge Select**|2| |
