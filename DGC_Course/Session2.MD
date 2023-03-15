@@ -1,5 +1,4 @@
 # Session #2 
-## (Estimated time 3 Hours including 15 min break)
 
 ## Review of previous week (15m)
 

@@ -46,8 +46,7 @@ This course will take a total of 6 hours split into 2 X 3 hour sessions.
 ### Session #2 (First rendered Scene)
 
 * Review of previous session
-* 1st Modeling project 
-* 2nd Modeling project
+* Modeling project 
 * Camera Placement
 * Rendering
 
