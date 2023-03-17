@@ -1,7 +1,8 @@
 author:
   name: Trevor Smale
   email: smaletrevor@gmail.com
-description: "Introduction to Blender"
+  title: Introduction to Blender
+  description: This course is designed to give uninitiated participants basic working proficiency with the software and a basic general understanding of 3D graphics principles.
 
 # Build settings
 remote_theme: pages-themes/tactile@v0.2.0

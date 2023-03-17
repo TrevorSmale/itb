@@ -1,6 +1,3 @@
-# Introduction to Blender
-
-This course is designed to give uninitiated participants basic working proficiency with the software and a basic general understanding of 3D graphics principles. 
 
 ## Documents
 
