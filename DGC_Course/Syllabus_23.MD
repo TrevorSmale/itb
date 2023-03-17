@@ -24,7 +24,8 @@ This course is designed to give uninitiated participants basic working proficien
 
 ## Course schedule
 
-TBA
+* Course #1 Part #1 - Saturday March 18th
+* Course #1 Part #2 - Saturday March 25th
 
 ### Duration
 

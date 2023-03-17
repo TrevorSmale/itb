@@ -1,13 +1,19 @@
 # Session #2 
 
-## Review of previous week (15m)
+## Review of previous week
 
-## Modeling Project #1 (1 Hour)
+## Model along
 
 # Break 15 min 
 
-## Modeling Project #2 (1 Hour)
+## Model along
 
-## Building a quick scene (30 min)
+## Scene buildout
 
-## Setup Camera & Render (10 min)
+## Setup Camera 
+
+## Render
+
+# Resource Files
+
+## TBA

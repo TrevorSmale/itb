@@ -1,5 +1,4 @@
 # Session #1 
-## (Estimated time 3 Hours including 15 min break)
 
 ---
 
