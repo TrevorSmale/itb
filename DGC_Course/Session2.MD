@@ -4,15 +4,14 @@
 
 [Session 1](Session1.MD)
 
-## Model along
-
-### What will be covered
+## Workshop session
 
 * Creation of cylinder
 * Flaring cylinder end
 * Positioning offset from centerline
 * Adding Empty
 * Mirror Modifier (Using Empty)
+* Parenting an object to the Empty
 * Applying subdivision surface modifier
 * Adding edge loops & Bevels
 * Loop Cutting
@@ -25,7 +24,7 @@
 
 # Break 15 min 
 
-## Model along
+## Workshop
 
 * Creating & Naming Materials
 * Applying Single & Multiple materials to objects
