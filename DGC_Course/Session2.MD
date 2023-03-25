@@ -16,4 +16,5 @@
 
 # Resource Files
 
-## TBA
+## [Download Binocular File](dl/Binoculars/bin.blend)
+## [Download Example Render](dl/Binoculars/bin.png)
