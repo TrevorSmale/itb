@@ -15,7 +15,6 @@ This course is designed to give uninitiated participants basic working proficien
 
 ## Course materials
 
-* [Course Syllabus](Syllabus_23.MD)
 * [Installation & Testing instructions](Install_and_Test.MD)
 * [Hardware Requirements](Hardware_requirements.MD)
 * [Course Session #1](Session1.MD)

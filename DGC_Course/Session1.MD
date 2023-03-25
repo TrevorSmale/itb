@@ -6,8 +6,8 @@
 
 * **Personal Intro**  
 * **Intro to staff**  
-* **Handouts** [Course Page](https://trevorsmale.github.io/itb/ “itb course")
-* **Read Through** Demonstration
+* **Handouts** [Syllabus](Syllabus_23.MD)
+* **Read Through** 
 
 ---
 
@@ -33,23 +33,23 @@
 
 ## Purpose of Blender
 
-* **Modelling** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Polygonal_modeling “Polygonal Modeling”)
-* **Sculpting** [LINK to Blender Manual](https://www.blender.org/features/sculpting/ “Blender Manual”)
-* **Texturing** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Texture_mapping “Wiki”)
-* **Animation & Rigging** [LINK to Blender Info Page](https://www.blender.org/features/animation “Blender Page”)
+* **Modelling** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Polygonal_modeling)
+* **Sculpting** [LINK to Blender Manual](https://www.blender.org/features/sculpting/)
+* **Texturing** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Texture_mapping)
+* **Animation & Rigging** [LINK to Blender Info Page](https://www.blender.org/features/animation)
 
 ---
 
 ## 3D Graphics
 
-* **Polygon Mesh** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Polygon_mesh “Wiki”)
-* **Normals** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Normal_(geometry) “Wiki”)
+* **Polygon Mesh** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Polygon_mesh)
+* **Normals** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Normal_(geometry))
 * **Mesh Types** Demonstration
-* **Shaders** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Shader “Wiki”)
-* **Texture Mapping** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Texture_mapping “Wiki”)
-* **UV Mapping** [LINK to Wikipedia](https://en.wikipedia.org/wiki/UV_mapping “Wiki”)
-* **Displacement Mapping** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Displacement_mapping “Wiki”)
-* **RayTracing** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Ray_tracing_(graphics) “Wiki”)
+* **Shaders** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Shader)
+* **Texture Mapping** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Texture_mapping)
+* **UV Mapping** [LINK to Wikipedia](https://en.wikipedia.org/wiki/UV_mapping)
+* **Displacement Mapping** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Displacement_mapping)
+* **RayTracing** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Ray_tracing_(graphics))
 
 ---
 
@@ -138,7 +138,7 @@
 
 ## Outliner
 
-* **Intro** [LINK to Manual](https://docs.blender.org/manual/en/latest/scene_layout/view_layers/introduction.html?highlight=outliner “Manual”)
+* **Intro** [LINK to Manual](https://docs.blender.org/manual/en/latest/scene_layout/view_layers/introduction.html?highlight=outliner)
 * **Adding scene items** SHIFT + A
 * **Selecting multiple items** Shift + LMB
 * **Creating a collection** M
@@ -148,7 +148,7 @@
 
 ## Areas & Windows
 
-* **Intro**[LINK to Manual](https://docs.blender.org/manual/en/latest/interface/window_system/areas.html?highlight=areas/ “Manual”)
+* **Intro**[LINK to Manual](https://docs.blender.org/manual/en/latest/interface/window_system/areas.html?highlight=areas)
 * **Resizing** RMB on edge / Demonstration
 * **Splitting** RMB on edge / Demonstration
 * **Joining** RMB on edge / Demonstration
@@ -158,7 +158,7 @@
 
 ## Editor Types
 
-* **Intro** [LINK to Manual](https://docs.blender.org/manual/en/latest/editors/index.html “Manual”)
+* **Intro** [LINK to Manual](https://docs.blender.org/manual/en/3.4/editors/index.html)
 * **Upper Left Corner** Demonstration
 * **Touring Editor Types** Demonstration
 
@@ -166,13 +166,13 @@
 
 ## Workspaces
 
-* **Intro** [LINK to Manual](https://docs.blender.org/manual/en/latest/interface/window_system/workspaces.html?highlight=workspaces/ “Manual”)
+* **Intro** [LINK to Manual](https://docs.blender.org/manual/en/latest/interface/window_system/workspaces.html?highlight=workspaces)
 
 ---
 
 ## Edit Mode
 
-* **Intro** [LINK to Manual](https://docs.blender.org/manual/en/latest/editors/3dview/controls/pivot_point/active_element.html?highlight=edit+mode “Manual”)
+* **Intro** [LINK to Manual](https://docs.blender.org/manual/en/latest/editors/3dview/controls/pivot_point/active_element.html?highlight=edit+mode)
 * **Review Polygon Mesh** [LINK to Wiki](https//en.wikipedia.org/wiki/Polygon_mesh "Wiki")
 * **Vertex Select** 1
 * **Edge Select** 2
@@ -182,6 +182,6 @@
 
 ## Edit Mode Toolbar
 
-* **Intro**[LINK to Wiki](https://docs.blender.org/manual/en/latest/modeling/meshes/tools/toolbar.html#mesh-toolbar-index “Manual”)
+* **Intro**[LINK to Manual](https://docs.blender.org/manual/en/latest/modeling/meshes/tools/toolbar.html#mesh-toolbar-index)
 
 ---
