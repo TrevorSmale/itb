@@ -6,7 +6,7 @@
 
 ## Workshop session
 
-* Creation of cylinder
+* Creation of a cylinder
 * Flaring cylinder end
 * Positioning offset from centerline
 * Adding Empty

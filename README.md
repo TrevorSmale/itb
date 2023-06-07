@@ -1,4 +1,6 @@
+# Introduction to Blender
 
+# Part #1 (2 Days)
 ## Documents
 
 * [Course Syllabus](DGC_Course/Syllabus_23.MD)
@@ -7,6 +9,12 @@
 * [Course Session #1](DGC_Course/Session1.MD)
 * [Course Session #2](DGC_Course/Session2.MD)
 * [Basic Hotkeys](DGC_Course/Shortcuts.MD)
+
+# Part #2 (2 Days)
+## Documents
+
+* [Course Syllabus]
+* [Course Session #1]
 
 ## External Resources Links
 

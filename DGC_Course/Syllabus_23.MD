@@ -17,20 +17,27 @@ This course is designed to give uninitiated participants basic working proficien
 
 * [Installation & Testing instructions](Install_and_Test.MD)
 * [Hardware Requirements](Hardware_requirements.MD)
-* [Course Session #1](Session1.MD)
-* [Course Session #2](Session2.MD)
+* [Part #1 Course Session #1](Session1.MD)
+* [Part #1 Course Session #2](Session2.MD)
+
+* [Part #2 Course Session #1]()
+* [Part #2 Course Session #2]()
 * [Basic Hotkeys](Shortcuts.MD)
 
-## Course schedule
+## Course Schedule
 
-* Course #1 Part #1 - Saturday March 18th
-* Course #1 Part #2 - Saturday March 25th
+* Part #1 Session #1 - Thursday June 8th, 7:00 PM - 10:00 PM
+* Part #1 Session #2 - Thursday June 15th, 7:00 PM - 10:00 PM
+
+* Part #2 Session #1 - Wednesday July 5th, 7:00 PM - 10:00 PM
+* Part #2 Session #2 - Wednesday July 12th, 7:00 PM - 10:00 PM
 
 ### Duration
 
-This course will take a total of 6 hours split into 2 X 3 hour sessions.
+Part #1 totals 6 hours split into 2 X 3 hour sessions.
+Part #2 totals 6 hours split into 2 X 3 hour sessions.
 
-### Session #1 (Getting Familiar)
+### Part #1 Session #1 (Getting Familiar)
 
 * Course Intro
 * History
@@ -43,12 +50,16 @@ This course will take a total of 6 hours split into 2 X 3 hour sessions.
 * Adding Objects
 * Editing Objects
 
-### Session #2 (First rendered Scene)
+### Part #1 Session #2 (First rendered Scene)
 
 * Review of previous session
 * Modeling project 
 * Camera Placement
 * Rendering
+
+### Part #2 Session #1 (Subd, Modifiers and Mini Project #1)
+
+### Part #2 Session #1 (Subd, Modifiers and Mini Project #2)
 
 ### Objectives
 
