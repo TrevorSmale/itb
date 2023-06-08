@@ -1,20 +1,17 @@
 # Session #1
 
----
-
 ## Course Intro
 
----
 
 ## History of Blender
 
 * **Ton Roosendaal** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Ton_Roosendaal "Wikipedia")
 
-Ton Roosendaal is a Dutch software developer and entrepreneur best known for founding the Blender Foundation and overseeing the development of Blender, a popular open-source 3D graphics software. He was born on March 20, 1960, in Eindhoven, Netherlands, and began his career as a digital artist and programmer in the 1980s. In 1998, he founded Not a Number Technologies (NaN), a company that developed and distributed Blender. After NaN went bankrupt in 2002, Roosendaal founded the Blender Foundation and made Blender open-source. Today, Blender is widely used in industries such as film, animation, and gaming, and Roosendaal continues to oversee its development and support the Blender community.
+Ton Roosendaal is a Dutch software developer and entrepreneur. He founded the Blender Foundation and developed Blender, a popular open-source 3D graphics software. Born on March 20, 1960, in Eindhoven, Netherlands, Roosendaal began his career as a digital artist and programmer. In 1998, he established Not a Number Technologies (NaN), the company behind Blender. 
 
 * **Brief History** [LINK to Blender.org/History](https://www.blender.org/about/history/ "History")
 
-Blender 3D was originally developed as a commercial software by Ton Roosendaal's company, Not a Number Technologies (NaN), in the late 1990s. However, when NaN went bankrupt in 2002, Roosendaal decided to make Blender open-source, which means that the source code was made available to the public for free and anyone could contribute to its development. He founded the Blender Foundation to oversee the open-source project and used crowdfunding and sponsorships to support its development. This decision to make Blender open-source has allowed the software to grow into a widely-used tool for 3D modeling, animation, and visual effects, with a vibrant community of users and contributors around the world.
+Blender 3D was initially a commercial software developed by Ton Roosendaal's company, Not a Number Technologies (NaN), in the late 1990s. However, when NaN went bankrupt in 2002, Roosendaal made Blender open-source. He founded the Blender Foundation to oversee the project and used crowdfunding and sponsorships for its support. Blender's transition to open-source led to its widespread use in 3D modeling, animation, and visual effects, with a global community of users and contributors.
 
 * **Port to Linux** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Linux "Linux")
 
@@ -26,15 +23,21 @@ Blender was ported to Linux in the early 2000s as part of the open-source develo
 
 * **Transparency** [LINK to Git Repository](https://projects.blender.org/blender/blender "Blender Repo")
 
-Transparency in the context of open source software refers to the practice of making the source code of a software project freely available to its users and allowing them to access, review, and modify it. This means that anyone can examine the source code, understand how the software works, and make changes to it if necessary. The transparency of open source software allows for collaboration and innovation, as developers can build on top of existing projects, contributing to their improvement and evolution. It also promotes accountability and trust between developers and users, as anyone can scrutinize the code for security vulnerabilities, errors, or malicious behavior. Overall, transparency is a key principle of the open source philosophy and has played a significant role in the success and growth of the open source movement.
+Transparency in open source software refers to the practice of freely sharing the source code, enabling users to access, review, and modify it. It promotes collaboration and innovation, as developers can contribute to existing projects and improve them. The transparency fosters a community-driven approach, allowing for continuous improvement and evolution.
 
-* **Collaboration** [Link to example project](https://www.blender.org/user-stories/nasas-experience-curiosity/ "NASA Curiosity Rover")
+* **Unexpected outcomes** [Link to Mars Rover Project](https://www.blender.org/user-stories/nasas-experience-curiosity/ "NASA Curiosity Rover")
 
-Collaboration is an essential aspect of open source software development, where developers from different backgrounds and locations work together to improve and maintain software projects. The transparency of the source code in open source projects facilitates collaboration, as anyone can contribute to the project by reviewing and improving the code, reporting bugs, or adding new features. Collaboration in open source software development often occurs through online forums, mailing lists, and code repositories where developers can share ideas, discuss issues, and contribute code changes. By collaborating, developers can leverage each other's skills and knowledge, leading to faster innovation and higher quality software. Additionally, collaboration in open source projects fosters a sense of community, where individuals are united by their passion for creating open and accessible software for everyone.
+A controllable Rover web-app, Experience Curiosity, to simulated space exploration of Exoplanets, to mobile-based Augmented Reality.
 
-* **Freedom** [LINK to Publication](https://www.researchgate.net/figure/Blender-interface-with-VI-Suite-elements_fig6_319700974 "Envrionemental Analysis Modification")
+Brian Kumanchik, Project Lead & Art Director of NASA Jet Propulsion Laboratory implemented Blender into the workflow of JPL because it has a mature WebGL engine for interactive 3D browswer experiences.
 
-The statements about transparency and collaboration in open source software imply four fundamental freedoms, commonly known as the "four essential freedoms" of open source software. These freedoms include:
+* **Unexpected outcomes** [Environmental Analysis Tool](https://www.researchgate.net/figure/Blender-interface-with-VI-Suite-elements_fig6_319700974 "Envrionemental Analysis Modification")
+
+Background The VI-Suite is a free and open-source addon for the 3D content creation application Blender, developed primarily as a tool for the contextual and performative analysis of buildings. Its functionality has grown from simple, static lighting analysis to fully parametric lighting, shadowing, and building energy analyses.
+
+* **Communication** [Link to Blender Official YT Channel](https://www.youtube.com/@BlenderOfficial/videos "Official Youtube Channel")
+
+* **The licensing allows for**
 
 1. The freedom to use the software for any purpose
 2. The freedom to access and examine the source code
@@ -45,16 +48,7 @@ Together, these four freedoms give users and developers the ability to understan
 
 ---
 
-## Purpose of Blender
-
-* **Modelling** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Polygonal_modeling)
-* **Sculpting** [LINK to Blender Manual](https://www.blender.org/features/sculpting/)
-* **Texturing** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Texture_mapping)
-* **Animation & Rigging** [LINK to Blender Info Page](https://www.blender.org/features/animation)
-
----
-
-## 3D Graphics
+## 3D Graphics concepts
 
 * **Graphical Advantage** 
 
@@ -72,11 +66,11 @@ Polygon modeling offers several efficiencies over other forms of 3D graphics, su
 
 * **Polygon Mesh** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Polygon_mesh)
 
-Polygon modeling is a technique used in 3D computer graphics to create complex 3D models by defining their shape through the use of interconnected flat polygons. These polygons are manipulated and transformed in order to create the desired shape of the model. Polygon modeling allows for great flexibility and control over the details of a model, as well as the ability to create highly detailed and realistic models with relatively low processing requirements. It is a widely used technique in industries such as video games, film, and architecture, and is often combined with other modeling techniques such as sculpting and texturing to create highly detailed and realistic models.
+Polygon modeling is a 3D computer graphics technique that uses interconnected flat polygons to define the shape of complex models. It offers flexibility and control, allowing for highly detailed and realistic designs with low processing requirements. 
 
 * **Normals** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Normal_(geometry))
 
-Polygon normals are vectors that define the orientation of a polygon or face in 3D space. They are calculated as the cross product of two edges of the polygon, and point outwards from the surface of the polygon. Polygon normals are used in 3D computer graphics to determine how light interacts with the surface of a model, affecting the shading and appearance of the model. They are also used to determine the direction of surface-based effects such as reflections and specular highlights.
+Polygon normals are vectors that determine the orientation of a polygon in 3D space. They point outward from the polygon's surface and are calculated by taking the cross product of two edges. In computer graphics, polygon normals influence how light interacts with a model, affecting its shading, reflections, and specular highlights. They also determine the direction of surface-based effects.
 
 * **Shaders** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Shader)
 
@@ -88,7 +82,7 @@ Texture mapping is a technique used in 3D computer graphics to apply a 2D image 
 
 * **UV Mapping** [LINK to Wikipedia](https://en.wikipedia.org/wiki/UV_mapping)
 
-UV texture coordinates are a 2D coordinate system used to map a 2D image or texture onto a 3D model in 3D computer graphics. The letters "U" and "V" refer to the two dimensions of the coordinate system, which are perpendicular to each other and represent the horizontal and vertical axes of the texture image. The UV coordinates are assigned to each vertex of the 3D model, which allows the texture to be mapped onto the surface of the model in a precise and accurate way. UV texture coordinates are essential for creating realistic textures on 3D models in applications such as video games, film, and architecture.
+UV texture coordinates are a 2D coordinate system used to map a 2D image or texture onto a 3D model in 3D computer graphics. The letters "U" and "V" refer to the two dimensions of the coordinate system, which are perpendicular to each other and represent the horizontal and vertical axes of the texture image. The UV coordinates are assigned to each vertex of the 3D model, which allows the texture to be mapped onto the surface of the model in a precise and accurate way.
 
 * **Types of Maps** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Displacement_mapping)
 
@@ -110,7 +104,7 @@ These are just a few examples of the types of texture maps used in 3D computer g
 
 * **RayTracing** [LINK to Wikipedia](https://en.wikipedia.org/wiki/Ray_tracing_(graphics))
 
-Ray tracing is a rendering technique used in 3D computer graphics to simulate the behavior of light as it interacts with objects in a scene. It works by tracing the path of light rays as they travel from a virtual camera through the scene and interact with objects, determining how the light is reflected and refracted by each object. This information is then used to generate a highly detailed and realistic image of the scene, including shadows, reflections, and other lighting effects. Ray tracing can create highly realistic images but can be computationally expensive and time-consuming. It is widely used in industries such as film, architecture, and product design to create highly realistic 3D visualizations.
+Ray tracing is a rendering technique that simulates the behavior of light as it interacts with objects in a scene. It works by tracing the path of light rays as they travel from a virtual camera through the scene and interact with objects, determining how the light is reflected and refracted by each object. 
 
 ---
 
@@ -133,7 +127,7 @@ Installing and testing Blender before a course is important to ensure compatibil
 
 * **Splash Screen** [LINK to Page](https://docs.blender.org/manual/en/latest/interface/window_system/splash.html "Blender Manual")
 
-A splash screen is a graphical image or animation that is displayed when an application or software program is launched. It is usually shown for a brief period of time before the main interface of the program is displayed. The splash screen typically includes the name and logo of the program or company, and may also provide information about the version number, credits, or other details. Splash screens can be used to give the user a visual indication that the program is loading or to provide branding or marketing information.
+The splash screen is a graphical image or animation that is displayed when an application or software program is launched. 
 
 * **Workspaces** [LINK to image](https://docs.blender.org/manual/en/3.4/_images/interface_window-system_workspaces_layout.png "Blender Manual")
 
@@ -151,14 +145,35 @@ The top bar in the Blender workspace is a horizontal bar located at the top of t
 
 The status bar in Blender is a narrow horizontal panel located at the bottom of the interface, below the 3D viewport. It provides information about the current state of the program and the active tool or feature. The status bar displays important information such as the current mode, selected object or component, the number of vertices, edges, and faces in the active mesh, and the current frame number for animation playback. It also displays status messages and warnings, and provides access to various system settings and preferences. The status bar is a helpful tool for monitoring the progress of operations and keeping track of important information while working in Blender.
 
-* **Tool Bar** [LINK to Page](https://docs.blender.org/manual/en/3.4/interface/window_system/topbar.html "Blender Manual")
+* **Tool Bar** [LINK to Page](https://docs.blender.org/manual/en/3.4/interface/tool_system.html?highlight=tool%20bar#ui-region-toolbar "Blender Manual")
+
+(Hide & Reveal with 'T')
+
+Located on the left-hand side of the Blender interface, the Blender Toolbar is a comprehensive collection of tools and functionalities. It offers quick access to a wide range of options for modeling, sculpting, texturing, animating, rendering, and more. 
+
 * **Outliner** [LINK to Page](https://docs.blender.org/manual/en/3.4/editors/outliner/introduction.html "Blender Manual")
-* **Tabs & Panels** [LINK to Page](https://docs.blender.org/manual/en/3.4/interface/window_system/tabs_panels.html "Blender Manual")
+
+The Blender Outliner is a hierarchical list view that provides a visual representation and organizational structure of the objects, collections, and data within a Blender scene.
+
+* **Panels** [LINK to Page](https://docs.blender.org/manual/en/3.4/interface/window_system/tabs_panels.html "Blender Manual")
+
+Tabs in the Blender UI refer to the horizontal tabs at the top of the interface that allow users to switch between different editor types and workspaces, providing a flexible and customizable layout.
+
+Panels in the Blender UI are vertical sections within editors that contain various settings, options, and tools related to specific functions, allowing users to access and modify specific aspects of their projects efficiently.
+
 * **Modes** Demonstration
+
+Blender modes are different editing contexts within the software that enable users to perform specific actions and manipulate objects, such as object mode for overall scene editing, edit mode for vertex-level modifications, and sculpt mode for more organic and detailed sculpting.
 
 ---
 
 ## Viewport Navigation
+
+Viewport navigation in Blender refers to the methods and controls used to navigate and explore the 3D Viewport, which is the main window where users interact with their 3D scenes. 
+
+* Orbit: To orbit the view around the scene, hold down the middle mouse button and drag the mouse in the desired direction. Alternatively, you can press and hold Shift and the middle mouse button, then drag.
+* Pan: To pan the view horizontally or vertically, hold down Shift and the middle mouse button, then drag the mouse.
+* Zoom: To zoom in or out, scroll the middle mouse button up or down. Alternatively, you can use the "+" and "-" keys on the keyboard to zoom in and out, respectively.
 
 * **Pan** Shift + CMB (Centre Mouse Button)
 * **Zoom** Scroll Wheel
@@ -191,6 +206,8 @@ The status bar in Blender is a narrow horizontal panel located at the bottom of 
 
 # Break (15 m)
 
+---
+
 ## Tool Bar
 
 * **Hide Show Tool Bar**T or Click Tab
@@ -209,6 +226,10 @@ The status bar in Blender is a narrow horizontal panel located at the bottom of 
 
 ## Add & Delete Items
 
+In Blender, adding items is done by utilizing specific shortcuts to quickly create objects or elements within the scene, such as Shift + A to bring up the Add menu and choose from a variety of primitives or Shift + A, followed by M, to add a new material.
+
+On the other hand, deleting items is typically done by selecting the desired object or element and pressing the Delete key or X key, which brings up a menu with options to delete the selected item, vertices, edges, or faces, depending on the active mode (Edit mode, Vertex mode, etc.). Additionally, using the shortcut Shift + X allows for deleting only the selected vertices, edges, or faces without deleting the entire object.
+
 * **Adding items to scene** SHIFT + A
 * **Deleting** X
 * **Context Menu** Demonstration
@@ -217,15 +238,38 @@ The status bar in Blender is a narrow horizontal panel located at the bottom of 
 
 ## Outliner
 
-* **Intro** [LINK to Manual](https://docs.blender.org/manual/en/latest/scene_layout/view_layers/introduction.html?highlight=outliner)
+The Blender Outliner is a powerful tool for managing objects, collections, and data within a scene. It provides an organized hierarchical view of the elements in the scene and allows for efficient selection, organization, and management.
+
+Associated shortcuts for using the Outliner include:
+
+* **Hiding/Showing** Pressing H to hide selected items or Alt + H to unhide all hidden items.
+* **Selecting/Deselecting** Clicking on an item in the Outliner selects it, and Shift + Clicking allows for selecting multiple items. Pressing A selects or deselects all items.
+* **Parenting** Dragging an item onto another in the Outliner establishes a parent-child relationship.
+* **Renaming** Pressing F2 or double-clicking on an item's name allows for renaming it.
+* **Deleting** Pressing X or Delete removes the selected item(s) from the scene.
+* **Collection Operations** Right-clicking on a collection in the Outliner brings up a context menu with various collection-related operations, such as creating, linking, or* unlinking collections.
 * **Adding scene items** SHIFT + A
 * **Selecting multiple items** Shift + LMB
 * **Creating a collection** M
 * **Selecting collection** Demonstration
 
+
+* **Intro** [LINK to Manual](https://docs.blender.org/manual/en/latest/scene_layout/view_layers/introduction.html?highlight=outliner)
+
 ---
 
 ## Areas & Windows
+
+In Blender, areas and windows refer to the various panels and regions within the user interface where different editors and tools are displayed, providing a flexible workspace for working on different aspects of a project simultaneously.
+
+Associated shortcuts for managing areas and windows in Blender include:
+
+* Splitting Areas: To split an area into two, position the mouse cursor over the border between two areas and press the left mouse button. Alternatively, use the shortcut Ctrl + Alt + Q to split the active area vertically or Ctrl + Alt + W to split it horizontally.
+* Joining Areas: To join two areas into one, position the mouse cursor over the border between them, press Ctrl + Alt + J, and click with the left mouse button.
+* Switching Editor Types: To switch the active editor type within an area, use the shortcut Ctrl + Left/Right Arrow keys or Ctrl + Up/Down Arrow keys.
+* Maximizing an Area: To maximize the active area, press Ctrl + Up Arrow or Ctrl + Down Arrow.
+* Toggling Full Screen: Pressing Shift + Spacebar toggles the current area into full-screen mode.
+* Zooming in/out: Use the middle mouse button scroll or the '+' and '-' keys to zoom in and out within an area.
 
 * **Intro**[LINK to Manual](https://docs.blender.org/manual/en/latest/interface/window_system/areas.html?highlight=areas)
 * **Resizing** RMB on edge / Demonstration
@@ -237,30 +281,70 @@ The status bar in Blender is a narrow horizontal panel located at the bottom of 
 
 ## Editor Types
 
-* **Intro** [LINK to Manual](https://docs.blender.org/manual/en/3.4/editors/index.html)
-* **Upper Left Corner** Demonstration
-* **Touring Editor Types** Demonstration
+### Edit Mode
 
----
+The 1, 2, and 3 keyboard commands in Blender are used to quickly access different selection modes within Edit mode in the 3D Viewport editor. These shortcuts allow users to switch between selecting vertices, edges, and faces with ease.
 
-## Workspaces
+**1: Vertex Selection Mode**
 
-* **Intro** [LINK to Manual](https://docs.blender.org/manual/en/latest/interface/window_system/workspaces.html?highlight=workspaces)
+Pressing the `1` key enters Vertex selection mode in Edit mode. This allows users to select individual vertices of a mesh for editing or manipulation.
 
----
+**2: Edge Selection Mode**
 
-## Edit Mode
+Pressing the `2` key activates Edge selection mode. In this mode, users can select edges of the mesh, which can be useful for tasks such as edge extrusion or creating sharp edges.
 
-* **Intro** [LINK to Manual](https://docs.blender.org/manual/en/latest/editors/3dview/controls/pivot_point/active_element.html?highlight=edit+mode)
-* **Review Polygon Mesh** [LINK to Wiki](https//en.wikipedia.org/wiki/Polygon_mesh "Wiki")
-* **Vertex Select** 1
-* **Edge Select** 2
-* **Face Select** 3
+**3: Face Selection Mode**
+
+Pressing the `3` key switches to Face selection mode. This mode enables users to select entire faces of the mesh, which is particularly handy for tasks like extruding or modifying large surface areas.
+
+Edit mode in Blender is a specific mode within the 3D Viewport editor that allows users to modify the geometry of selected objects at the vertex, edge, or face level. It provides a range of tools and shortcuts for precise editing and manipulation of the mesh.
+
+Here are some associated shortcuts commonly used in Edit mode:
+
+**Selection:**
+- Right-click: Selects a vertex, edge, or face under the cursor.
+- `B`: Activates box selection, allowing users to drag a selection box to select multiple vertices, edges, or faces.
+- `C`: Enables circle selection, where users can select vertices, edges, or faces within a circular area.
+- `Ctrl + Left-click`: Adds or removes vertices, edges, or faces from the selection.
+- `Ctrl + L`: Selects all connected vertices, edges, or faces to the currently selected element.
+
+**Transformation:**
+- `G`: Translates (moves) selected vertices, edges, or faces.
+- `R`: Rotates selected vertices, edges, or faces.
+- `S`: Scales selected vertices, edges, or faces.
+- `Alt + G`: Resets the translation (moves) of selected vertices, edges, or faces.
+- `Alt + R`: Resets the rotation of selected vertices, edges, or faces.
+- `Alt + S`: Resets the scale of selected vertices, edges, or faces.
+
+**Mesh Editing:**
+- `E`: Extrudes selected vertices, edges, or faces to create new geometry.
+- `F`: Creates an edge or face between selected vertices or edges.
+- `Ctrl + R`: Activates the Loop Cut tool, allowing users to create new edge loops.
+- `Ctrl + B`: Enables the Bevel tool, which creates beveled edges or faces.
+
+**Vertex/Edge/Face Operations:**
+- `Ctrl + V`: Opens the Vertex context menu with various vertex-related operations.
+- `Ctrl + E`: Opens the Edge context menu with various edge-related operations.
+- `Ctrl + F`: Opens the Face context menu with various face-related operations.
 
 ---
 
 ## Edit Mode Toolbar
 
-* **Intro**[LINK to Manual](https://docs.blender.org/manual/en/latest/modeling/meshes/tools/toolbar.html#mesh-toolbar-index)
+The Editor Toolbar in Blender is a set of tools and options available within each editor window. It provides quick access to commonly used functions and settings specific to the active editor, enhancing productivity and workflow efficiency.
+
+The Editor Toolbar typically appears at the top of the editor window and contains various icons, buttons, menus, and dropdowns. The specific tools and options present in the toolbar depend on the type of editor currently active.
+
+For example, in the 3D Viewport editor, the toolbar may include tools for object manipulation (such as selection, transformation, and duplication), options for shading and display modes, rendering settings, and viewport navigation controls.
+
+In the UV/Image Editor, the toolbar may offer tools for UV mapping, texture painting, image manipulation, and adjustment settings.
+
+The Properties Editor has its own toolbar that displays options related to the selected object or scene properties, materials, textures, and more.
+
+Similarly, other editor types in Blender have their respective toolbars tailored to the specific functionalities and tasks associated with them.
+
+The Editor Toolbar serves as a convenient and easily accessible interface for performing actions and adjusting settings within the active editor. It allows users to efficiently navigate, manipulate, and customize their workflow, ensuring a smooth and intuitive experience in Blender.
+
+* **Editor Toolbar**[LINK to Manual](https://docs.blender.org/manual/en/latest/modeling/meshes/tools/toolbar.html#mesh-toolbar-index)
 
 ---
