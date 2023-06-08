@@ -2,6 +2,11 @@
 
 ## Course Intro
 
+In this first part of the course, we will follow a lecture format with demonstrations. I strongly encourage you to actively participate by trying to mimic the demos as they are presented. This hands-on approach will enhance your learning experience and allow you to gain practical skills by actively engaging with the material. 
+
+Given the extensive amount of concepts to cover during these three hours, it is highly recommended that you thoroughly review the notes before the next hands-on session. This review will help solidify your understanding of the material and prepare you for active participation in the upcoming session.
+
+I encourage participants to ask questions at the end of each section. Don't hesitate to seek clarification or further information on any topic discussed.
 
 ## History of Blender
 
@@ -114,7 +119,7 @@ Installing and testing Blender before a course is important to ensure compatibil
 
 ---
 
-* **Install** [LINK to installation instructions](https://docs.blender.org/manual/en/latest/getting_started/installing/index.html "Blender Manual")
+* **Install** [LINK to Download](https://www.blender.org/download/lts/3-3/ "Blender 3.3 LTS Download page")
 * **Open** You may get a security warning from Windows Defender and/or Mac OS
 * **Test** [Custom test instructions](Install_and_Test.MD "Markdown Document")
 * **Configure** [LINK to configuration manual](https://docs.blender.org/manual/en/latest/getting_started/configuration/index.html "Blender Manual")
@@ -206,12 +211,10 @@ Viewport navigation in Blender refers to the methods and controls used to naviga
 
 # Break (15 m)
 
----
-
 ## Tool Bar
 
 * **Hide Show Tool Bar**T or Click Tab
-* **About**[LINK to Page](https://docs.blender.org/manual/en/latest/interface/tool_system.html#ui-region-toolbar “Manual”)
+* **About** [LINK to Page](https://docs.blender.org/manual/en/latest/interface/tool_system.html#ui-region-toolbar “Manual”)
 * **Selection Tool** Demonstration
 * **View Menu** Demonstration
 * **Move** Demonstration
@@ -271,7 +274,7 @@ Associated shortcuts for managing areas and windows in Blender include:
 * Toggling Full Screen: Pressing Shift + Spacebar toggles the current area into full-screen mode.
 * Zooming in/out: Use the middle mouse button scroll or the '+' and '-' keys to zoom in and out within an area.
 
-* **Intro**[LINK to Manual](https://docs.blender.org/manual/en/latest/interface/window_system/areas.html?highlight=areas)
+* **Intro** [LINK to Manual](https://docs.blender.org/manual/en/latest/interface/window_system/areas.html?highlight=areas)
 * **Resizing** RMB on edge / Demonstration
 * **Splitting** RMB on edge / Demonstration
 * **Joining** RMB on edge / Demonstration
@@ -345,6 +348,10 @@ Similarly, other editor types in Blender have their respective toolbars tailored
 
 The Editor Toolbar serves as a convenient and easily accessible interface for performing actions and adjusting settings within the active editor. It allows users to efficiently navigate, manipulate, and customize their workflow, ensuring a smooth and intuitive experience in Blender.
 
-* **Editor Toolbar**[LINK to Manual](https://docs.blender.org/manual/en/latest/modeling/meshes/tools/toolbar.html#mesh-toolbar-index)
+* **Editor Toolbar** [LINK to Manual](https://docs.blender.org/manual/en/latest/modeling/meshes/tools/toolbar.html#mesh-toolbar-index)
 
 ---
+
+# Homework (If possible)
+
+Please take a moment to scroll back through this page and review each section, testing the techniques mentioned along the way. Additionally, Session #2 is available for your review if you are interested in previewing what we will be building next week. Feel free to explore and familiarize yourself with the upcoming content.

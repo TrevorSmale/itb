@@ -1,4 +1,4 @@
-# Introduction to Blender
+# ITB
 
 # Part #1 (2 Days)
 ## Documents
