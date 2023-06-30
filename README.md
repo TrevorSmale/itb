@@ -13,8 +13,9 @@
 # Part #2 (2 Days)
 ## Documents
 
-* [Course Syllabus]
-* [Course Session #1]
+* [Course Syllabus](DGC_Course/Syllabus_23.MD)
+* [Course Session #1](DGC_Course/Session3.MD)
+* [Course Session #2](DGC_Course/Session4.MD)
 
 ## External Resources Links
 

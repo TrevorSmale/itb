@@ -57,17 +57,22 @@ Part #2 totals 6 hours split into 2 X 3 hour sessions.
 * Camera Placement
 * Rendering
 
-### Part #2 Session #1 (Subd, Modifiers and Mini Project #1)
+### Part #2 Session #1 (Model, Texture, Render Mini Project #1)
 
-### Part #2 Session #1 (Subd, Modifiers and Mini Project #2)
+* Modelling continued
+* Texturing Concepts
+* Creating Procedural Textures
+* Creating Mapped Textures
+* Rendering
+
+### Part #2 Session #1 (Model, Texture, Render Mini Project #2)
 
 ### Objectives
 
-Understanding the user interface
-Understanding important shortcuts
-Understanding 3D graphics principles
-Understanding Polygon model creation
-Understanding Scene management
+* Modelling continued
+* Creating More Procedural Textures
+* More about the camera (Depth of Field / FOV)
+* Rendering
 
 
 
