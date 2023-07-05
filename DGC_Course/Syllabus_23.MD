@@ -11,7 +11,7 @@ This is an Introductory course to Blender 3D, a 3D modeling and animation softwa
 
 ## Expectations & goals
 
-This course is designed to give uninitiated participants basic working proficiency with the software and a basic general understanding of 3D graphics. 
+This course is designed to give uninitiated participants basic working proficiency with the software and a basic understanding of 3D graphics. 
 
 ## Course materials
 
@@ -20,8 +20,8 @@ This course is designed to give uninitiated participants basic working proficien
 * [Part #1 Course Session #1](Session1.MD)
 * [Part #1 Course Session #2](Session2.MD)
 
-* [Part #2 Course Session #1]()
-* [Part #2 Course Session #2]()
+* [Part #2 Course Session #1](Session3.MD)
+* [Part #2 Course Session #2](Session4.MD)
 * [Basic Hotkeys](Shortcuts.MD)
 
 ## Course Schedule
@@ -66,6 +66,8 @@ Part #2 totals 6 hours split into 2 X 3 hour sessions.
 * Rendering
 
 ### Part #2 Session #1 (Model, Texture, Render Mini Project #2)
+
+* Continuation of procedural 
 
 ### Objectives
 

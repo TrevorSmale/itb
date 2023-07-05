@@ -1,31 +1,64 @@
 # Session #4 
 
-## Quick Review of previous week
+## Texturing Workshop Session
 
-[Session 1](Session3.MD)
+We will focus on creating, customizing, and applying procedural textures. Furthermore, we will explore the use of simple mapped image textures to understand how they work. After covering texturing, we will proceed to set up the scene to create a visually appealing rendering.
 
-## Workshop session
+## Comparing Procedural and Mapped Textures 
 
-This 2 session course goes beyond navigation and basic modelling covered in the first half of introduction to Blender and gets into use of modifiers, texturing, scene setup and rendering over two 3 hour sessions.
+### Procedurally Generated Textures:
 
-## Review of syllibus (15)
+* Instant Tweaks
+* Can be animated 
+* Generally take up less space
+* Can be Tedious
 
-## Discussion of first session (15)
+### Mapped Textures (UV or Projected)
 
-## Moving on with a new basic model (15)
+* Render efficiently
+* Transport between applications
+* Offers more control
+* More widely used
 
-## More about the camera (15)
+## Setting up our workspace for texturing
 
-## Setting up a focus object and depth of field (15)
+* Window splits
+* Changing workspaces
+* Downloading resource files
+* Creating blank textures
 
-## Creating a studio backdrop (15)
+## Building our first procedural texture 
 
-Break
+We will start building our first procedural texture for our red dipped wax.
 
-## Making more procedural textures (30)
+![Wax Texture Nodes](img/WaxTextureNodes.png "Wax Texture Nodes")
 
-## Creating second geometry nodes item (30)
+## Building our second procedural texture in combination with our first mapped texture
+
+![Label Texture Nodes](img/LabelTextureNodes.png "Label Texture Nodes")
+
+## Building our third procedural texture 
+
+![Glass Texture Nodes](img/GlassTextureNodes.png "Glass Texture Nodes")
+
+## Building our fourth procedural texture
+
+![Back Drop Texture Nodes](img/BackDropTextureNodes.png "Back Drop Texture Nodes")
+
+## Building our fifth and final procedural texture
+
+## Setting up our camera (15)
+
+## Setting up our Focus Object (15)
 
 ## Setting scene (15)
 
-## Rendering out project #2 (15)
+## Rendering out our project (15)
+
+# Downloads
+
+## [Download Wine Bottle Blender File](dl/WineBottle/WineBottle.blend)
+## [Download Image of Wine Bottle Wireframe](dl/WineBottle/WineBottleWire.png)
+## [Download Image of final render example](dl/WineBottle/WineBottleRender.png)
+## [Download Label Image](dl/WineBottle/Label.png)
+## [Download Blender Logo](dl/WineBottle/BlenderLogo.png)
