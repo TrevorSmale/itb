@@ -57,7 +57,8 @@ We will start building our first procedural texture for our red dipped wax.
 
 # Downloads
 
-## [Download Wine Bottle Blender File](dl/WineBottle/WineBottle.blend)
+## [Download Un-Textured Wine Bottle Blender File](dl/WineBottle/WineBottleModellingDemo.zip)
+## [Download Textured Wine Bottle Blender File](dl/WineBottle/WineBottle.blend)
 ## [Download Image of Wine Bottle Wireframe](dl/WineBottle/WineBottleWire.png)
 ## [Download Image of final render example](dl/WineBottle/WineBottleRender.png)
 ## [Download Label Image](dl/WineBottle/Label.png)
