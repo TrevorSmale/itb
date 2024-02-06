@@ -3,7 +3,6 @@
 # Part #1 (2 Days)
 ## Documents
 
-* [Course Syllabus](DGC_Course/Syllabus_23.MD)
 * [Installation & Testing instructions](DGC_Course/Install_and_Test.MD)
 * [Hardware Requirements](DGC_Course/Hardware_requirements.MD)
 * [Course Session #1](DGC_Course/Session1.MD)
@@ -13,7 +12,6 @@
 # Part #2 (2 Days)
 ## Documents
 
-* [Course Syllabus](DGC_Course/Syllabus_23.MD)
 * [Course Session #1](DGC_Course/Session3.MD)
 * [Course Session #2](DGC_Course/Session4.MD)
 
