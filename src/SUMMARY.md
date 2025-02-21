@@ -1,7 +1,7 @@
 # Summary
 
 - [Intro](./intro.md)
-- [Choosing Hardware](./HW.md
+- [Choosing Hardware](./HW.md)
 - [Install Blender](./Install.md)
 - [Shortcuts](./Shortcuts.md)
 - [Unit 1](./U1.md)
