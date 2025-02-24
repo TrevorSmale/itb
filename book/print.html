@@ -1,0 +1,1171 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Intro to Blender</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Intro to Blender</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction-to-blender"><a class="header" href="#introduction-to-blender">Introduction to Blender</a></h1>
+<h2 id="instructor-led"><a class="header" href="#instructor-led">Instructor-Led</a></h2>
+<p>We will follow a lecture format with live demonstrations. I strongly encourage you to participate actively by replicating each demo as it is presented. This hands-on approach, akin to experiential learning, enriches your learning experience and empowers you with practical skills through direct engagement.</p>
+<p>Because we need to cover a substantial array of concepts within our three-hour timeframe, reviewing the notes thoroughly before the next hands-on session is highly advisable. This review will strengthen your grasp of the material and better prepare you for active participation in the upcoming session.</p>
+<p>Feel free to ask questions at the end of each section. If you need clarification or further information on any topic discussed, don’t hesitate to speak up.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="hardware-requirements"><a class="header" href="#hardware-requirements">Hardware Requirements</a></h1>
+<h2 id="blender-foundation-recommendations"><a class="header" href="#blender-foundation-recommendations">Blender Foundation recommendations</a></h2>
+<p>Blender does have some special hardware requirements that may not be satisfied by the average computer.
+Blender.org lists the minimum hardware requirements as follows:</p>
+<ul>
+<li>64-bit quad core CPU with SSE2 support.</li>
+<li>8 GB RAM.</li>
+<li>Full HD display.</li>
+<li>Mouse, trackpad or pen+tablet.</li>
+<li>Graphics card with 2 GB RAM, OpenGL 4.3.</li>
+<li>Less than 10 year old.</li>
+</ul>
+<p>Please note that these are the minimum system requirements. If you are planning on using this software to create more advanced projects, it is best to look at what Blender artists recommend.</p>
+<h1 id="additional-notes"><a class="header" href="#additional-notes">Additional Notes:</a></h1>
+<h2 id="graphics"><a class="header" href="#graphics">Graphics</a></h2>
+<p>It is best to have a <a href="https://en.wikipedia.org/wiki/Graphics_card" title="Wiki Page">Dedicated Graphics Card</a> for using 3D software like Blender. 3D modeling and rendering typically utilizes large amounts of virtual memory. Dedicated graphics cards have additional virtual memory for this purpose. Some integrated graphics systems in laptops and mini computers work for light projects as well. It is best to do a bit of personal research into the matter.</p>
+<p>Most cards over the past decade will be just fine so long as you're packing at least 2GB of video memory on the Nvidia GeForce 400 series, AMD's Radeon HD 7000 range, or newer. CPU-wise, you're looking at a quad-core processor to get the program running.</p>
+<p>If this information is making your head spin, then the demo scene stress test should at least confirm that your computer will work for this course.</p>
+<h2 id="mouse"><a class="header" href="#mouse">Mouse</a></h2>
+<p>I urge you to use a dedicated mouse with a mechanical clickable centrewheel. The clickable centrewheel will be used often for panning and rotation of the 3D scene. Most mid-grade dedicated mice include this feature.</p>
+<p>Until you are familiar with the interface, please do note use:</p>
+<ul>
+<li>A trackpad</li>
+<li>A touch-based mouse eg. Apple Magic Mouse</li>
+<li>A digitizer tablet eg. Wacom</li>
+</ul>
+<p>If you in need of a different mouse, here are a few low cost recommendations that are easy to find online or pick up at staples. Note: both of these mice do not have bluetooth and require a USB A port for the wireless receiver.</p>
+<p><a href="https://www.amazon.ca/Microsoft-Wireless-Mobile-Mouse-1850/dp/B00KLTEA0G/ref=sr_1_20?keywords=gaming%2Bmouse&amp;qid=1674592449&amp;refinements=p_72%3A11192170011%2Cp_n_feature_eight_browse-bin%3A23664533011%2Cp_n_feature_seven_browse-bin%3A23660173011%2Cp_36%3A12035760011&amp;rnid=12035759011&amp;s=pc&amp;sr=1-20&amp;th=1" title="Amazon Link">Microsoft 2.5 ghz wireless 1850 mouse on Amazon Canada</a></p>
+<p><a href="https://www.amazon.ca/Logitech-M325-Wireless-Mouse-910-002650/dp/B005HQ514C/ref=sr_1_3?crid=3K667NFXFTVIZ&amp;keywords=logitech+m325&amp;qid=1674593045&amp;refinements=p_85%3A5690392011%2Cp_36%3A12035760011&amp;rnid=12035759011&amp;rps=1&amp;s=electronics&amp;sprefix=logitech+m325%2Caps%2C77&amp;sr=1-3" title="Amazon Link">Logitech 2.5 ghz wireless M325 mouse on Amazon Canada</a></p>
+<h2 id="display"><a class="header" href="#display">Display</a></h2>
+<p>Blender has a rather large and complex user interface with many small buttons and windows. It is best to use a large, high resolution monitor in order to maximize the UI spread. Otherwise, buttons may be hidden or minimized, causing some confusion for the uninitiated.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="install--test"><a class="header" href="#install--test">Install &amp; Test</a></h1>
+<h2 id="a-overview"><a class="header" href="#a-overview">A) Overview</a></h2>
+<p>Downloading and installing Blender is normally a straightforward process. However, if you have never tested the software on your particular computer hardware it is best to download, install and open a demo file for quick testing. Furthermore, I would like to ensure we are all using a similar installation with default settings and layout.</p>
+<h2 id="b-recommended-blender-version"><a class="header" href="#b-recommended-blender-version">B) Recommended Blender version</a></h2>
+<p>Blender is under constant development meaning there are small incremental releases happening weekly. Implementing small changes on a constant basis can cause instability or bugs to the end user. I recommend downloading a Long Term Release version as these versions are intended for studios that favor reliability over new features. The latest (LTS) release version is version 3.3.3</p>
+<p><a href="https://www.blender.org/download/lts/3-3/" title="Blender LTS page">Direct Link to 3.3 LTS release download</a></p>
+<h2 id="c-running-a-demo-file"><a class="header" href="#c-running-a-demo-file">C) Running a demo file</a></h2>
+<p>Once you have Blender installed, it is best to open a demo scene to check for crashing or other bugs.
+<a href="https://www.blender.org/download/demo-files/" title="Blender Demo Files Download Page">There is a page hosted by the organization</a> that allows anyone to download open sourced demo scenes.</p>
+<h2 id="1-download-demo-scene"><a class="header" href="#1-download-demo-scene">1. Download demo scene</a></h2>
+<p>This course will not be taxing on your system as we are using basic features. I recommend downloading the 'Classroom Scene' created by Christophe Seux. <a href="https://download.blender.org/demo/test/classroom.zip" title="Blender Classroom Demo File">Here is a direct link to downloading the file.</a></p>
+<h2 id="2-open-demo-scene"><a class="header" href="#2-open-demo-scene">2. Open demo scene</a></h2>
+<p>Once you have downloaded the demo file, unzip it and open the classroom.blend file. Upon first opening the file you should see this:</p>
+<p><img src="img/bc_ss_io.png" alt="Blender Classroom Screen Shot" title="Initial screen of Blender Classroom Scene" /></p>
+<h2 id="3-enable-viewport-shading"><a class="header" href="#3-enable-viewport-shading">3. Enable 'Viewport Shading'</a></h2>
+<p>In order to test the capability of your computer for rendering click this button circled in red:</p>
+<p><img src="img/bc_ss_io_ic.png" alt="Blender Classroom Screen Shot Render Button" title="Initial screen of Blender Classroom Scene Initiate Render" /></p>
+<p>Once you have clicked the 'Viewport shading button' as indicated by the red circle, patiently wait for the scene to load. The time to load varies depending on what computer you are using. I would suggest leaving this process for 1-10 mins.</p>
+<h2 id="4-confirm-the-demo-scene-has-rendered-correctly"><a class="header" href="#4-confirm-the-demo-scene-has-rendered-correctly">4. Confirm the demo scene has rendered correctly</a></h2>
+<p>The scene should render within that suggested timeframe and look like this. Note: there is text in the upper left corner that indicates the loading, rendering and completion of the scene as indicated here.</p>
+<p><img src="img/bc_ss_io_rd.png" alt="Blender Classroom Screen Shot Render Button" title="Initial screen of Blender Classroom Scene Initiate Render" /></p>
+<p>If your scene looks like this screenshot then you have successfully stress tested your machine and are ready to take on this course. By completing this stress test we can now deduce that:</p>
+<ul>
+<li>Your Blender 3.3.3 installation was successful.</li>
+<li>You have opened your first Blender file.</li>
+<li>Your machine is capable of rendering [Raytraced.](https://en.wikipedia.org/wiki/Ray_tracing_(graphics)"Wikipedia Page for Raytracing Graphics") light successfully.</li>
+<li>You are ready to begin the course!</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="basic-shortcuts"><a class="header" href="#basic-shortcuts">Basic Shortcuts</a></h1>
+<p>A short list of heavily used keyboard shortcuts baked into Blender by default.</p>
+<h1 id="object-mode-shortcuts"><a class="header" href="#object-mode-shortcuts">Object Mode Shortcuts</a></h1>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Description</th><th style="text-align: center">Mac Modifier Key</th><th style="text-align: center">Windows Modifier Key</th><th style="text-align: center">Linux Modifier Key</th><th style="text-align: center"></th><th style="text-align: center">Key #1</th><th style="text-align: center"></th><th style="text-align: center">Key #2</th></tr></thead><tbody>
+<tr><td style="text-align: center"><strong>Select All</strong></td><td style="text-align: center">Command (⌘)</td><td style="text-align: center">Control (Ctrl)</td><td style="text-align: center">Control (Ctrl)</td><td style="text-align: center">+</td><td style="text-align: center">A</td><td style="text-align: center">X</td><td style="text-align: center">X</td></tr>
+<tr><td style="text-align: center"><strong>Multi Select</strong></td><td style="text-align: center">SHIFT</td><td style="text-align: center">SHIFT</td><td style="text-align: center">SHIFT</td><td style="text-align: center">+</td><td style="text-align: center">LMB</td><td style="text-align: center">X</td><td style="text-align: center">X</td></tr>
+<tr><td style="text-align: center"><strong>Cut</strong></td><td style="text-align: center">Command (⌘)</td><td style="text-align: center">Control (Ctrl)</td><td style="text-align: center">Control (Ctrl)</td><td style="text-align: center">+</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td></tr>
+<tr><td style="text-align: center"><strong>Copy</strong></td><td style="text-align: center">Command (⌘)</td><td style="text-align: center">Control (Ctrl)</td><td style="text-align: center">Control (Ctrl)</td><td style="text-align: center">+</td><td style="text-align: center">C</td><td style="text-align: center">X</td><td style="text-align: center">X</td></tr>
+<tr><td style="text-align: center"><strong>Paste</strong></td><td style="text-align: center">Command (⌘)</td><td style="text-align: center">Control (Ctrl)</td><td style="text-align: center">Control (Ctrl)</td><td style="text-align: center">+</td><td style="text-align: center">S</td><td style="text-align: center">X</td><td style="text-align: center">X</td></tr>
+<tr><td style="text-align: center"><strong>Copy + Properties</strong></td><td style="text-align: center">Command (⌘)</td><td style="text-align: center">Control (Ctrl)</td><td style="text-align: center">Control (Ctrl)</td><td style="text-align: center">+</td><td style="text-align: center">Alt</td><td style="text-align: center">+</td><td style="text-align: center">C</td></tr>
+<tr><td style="text-align: center"><strong>Paste + Properties</strong></td><td style="text-align: center">Command (⌘)</td><td style="text-align: center">Control (Ctrl)</td><td style="text-align: center">Control (Ctrl)</td><td style="text-align: center">+</td><td style="text-align: center">Alt</td><td style="text-align: center">+</td><td style="text-align: center">V</td></tr>
+<tr><td style="text-align: center"><strong>Delete</strong></td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td></tr>
+<tr><td style="text-align: center"><strong>Sidebar Collapse/Show</strong></td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">N</td><td style="text-align: center">X</td><td style="text-align: center">X</td></tr>
+<tr><td style="text-align: center"><strong>Contextual Pie Menu</strong></td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">~</td><td style="text-align: center">X</td><td style="text-align: center">X</td></tr>
+<tr><td style="text-align: center"><strong>Object/Edit Mode</strong></td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">TAB</td><td style="text-align: center">X</td><td style="text-align: center">X</td></tr>
+<tr><td style="text-align: center"><strong>Grab</strong></td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">G</td><td style="text-align: center">X</td><td style="text-align: center">X</td></tr>
+<tr><td style="text-align: center"><strong>Free Move Along X Axis</strong></td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">G</td><td style="text-align: center">+</td><td style="text-align: center">X</td></tr>
+<tr><td style="text-align: center"><strong>Free Move Along Y Axis</strong></td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">G</td><td style="text-align: center">+</td><td style="text-align: center">Y</td></tr>
+<tr><td style="text-align: center"><strong>Free Move Along Z Axis</strong></td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">G</td><td style="text-align: center">+</td><td style="text-align: center">Z</td></tr>
+<tr><td style="text-align: center"><strong>Rotate</strong></td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">R</td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center"><strong>Rotate Around X Axis</strong></td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">R</td><td style="text-align: center">+</td><td style="text-align: center">X</td></tr>
+<tr><td style="text-align: center"><strong>Rotate Around Y Axis</strong></td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">R</td><td style="text-align: center">+</td><td style="text-align: center">Y</td></tr>
+<tr><td style="text-align: center"><strong>Rotate Around Z Axis</strong></td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">R</td><td style="text-align: center">+</td><td style="text-align: center">Z</td></tr>
+<tr><td style="text-align: center"><strong>Hide</strong></td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">H</td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center"><strong>ISOLATE</strong></td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">SHIFT</td><td style="text-align: center">+</td><td style="text-align: center">H</td></tr>
+<tr><td style="text-align: center"><strong>UNHIDE ALL</strong></td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">ALT</td><td style="text-align: center">+</td><td style="text-align: center">H</td></tr>
+<tr><td style="text-align: center"><strong>Confirm Operation</strong></td><td style="text-align: center">RETURN</td><td style="text-align: center">ENTER</td><td style="text-align: center">ENTER</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td></tr>
+<tr><td style="text-align: center"><strong>Cancel Operation</strong></td><td style="text-align: center">ESC</td><td style="text-align: center">ESC</td><td style="text-align: center">ESC</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td></tr>
+<tr><td style="text-align: center"><strong>Add Item to Scene</strong></td><td style="text-align: center">SHIFT</td><td style="text-align: center">SHIFT</td><td style="text-align: center">SHIFT</td><td style="text-align: center">+</td><td style="text-align: center">A</td><td style="text-align: center">X</td><td style="text-align: center">X</td></tr>
+</tbody></table>
+</div>
+<h1 id="edit-mode-shortcuts"><a class="header" href="#edit-mode-shortcuts">Edit Mode Shortcuts</a></h1>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Description</th><th style="text-align: center">Mac Modifier Key</th><th style="text-align: center">Windows Modifier Key</th><th style="text-align: center">Linux Modifier Key</th><th style="text-align: center"></th><th style="text-align: center">Key #1</th><th style="text-align: center"></th><th style="text-align: center">Key #2</th></tr></thead><tbody>
+<tr><td style="text-align: center"><strong>Select All</strong></td><td style="text-align: center">Command (⌘)</td><td style="text-align: center">Control (Ctrl)</td><td style="text-align: center">Control (Ctrl)</td><td style="text-align: center">+</td><td style="text-align: center">A</td><td style="text-align: center">X</td><td style="text-align: center">X</td></tr>
+<tr><td style="text-align: center"><strong>Vertex Select</strong></td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">1</td><td style="text-align: center">+</td><td style="text-align: center">LMB</td></tr>
+<tr><td style="text-align: center"><strong>Edge Select</strong></td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">+</td><td style="text-align: center">2</td><td style="text-align: center">+</td><td style="text-align: center">LMB</td></tr>
+<tr><td style="text-align: center"><strong>Face Select</strong></td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">+</td><td style="text-align: center">3</td><td style="text-align: center">+</td><td style="text-align: center">LMB</td></tr>
+<tr><td style="text-align: center"><strong>Inset Edge</strong></td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">+</td><td style="text-align: center">S</td><td style="text-align: center">X</td><td style="text-align: center">X</td></tr>
+<tr><td style="text-align: center"><strong>Bevel Edge</strong></td><td style="text-align: center">CTRL</td><td style="text-align: center">CTRL</td><td style="text-align: center">CTRL</td><td style="text-align: center">+</td><td style="text-align: center">B</td><td style="text-align: center">X</td><td style="text-align: center">X</td></tr>
+<tr><td style="text-align: center"><strong>Knife Tool</strong></td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">K</td><td style="text-align: center">X</td><td style="text-align: center">X</td></tr>
+<tr><td style="text-align: center"><strong>Loop Cut</strong></td><td style="text-align: center">Command (⌘)</td><td style="text-align: center">Control (Ctrl)</td><td style="text-align: center">Control (Ctrl)</td><td style="text-align: center">+</td><td style="text-align: center">R</td><td style="text-align: center">X</td><td style="text-align: center">X</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="unit-1"><a class="header" href="#unit-1">Unit #1</a></h1>
+<p>This first unit will introduce:</p>
+<ul>
+<li>The History &amp; Philosophy of Blender 3D</li>
+<li>Fundamental 3D graphics concepts</li>
+<li>Broad overview of the interface</li>
+<li>Working modes</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="history-of-blender"><a class="header" href="#history-of-blender">History of Blender</a></h2>
+<ul>
+<li><strong>Ton Roosendaal</strong> <a href="https://en.wikipedia.org/wiki/Ton_Roosendaal" title="Wikipedia">LINK to Wikipedia</a></li>
+</ul>
+<p>Ton Roosendaal is a Dutch software developer and entrepreneur. He founded the Blender Foundation and developed Blender, a popular open-source 3D graphics software. Born on March 20, 1960, in Eindhoven, Netherlands, Roosendaal began his career as a digital artist and programmer. In 1998, he established Not a Number Technologies (NaN), the company behind Blender.</p>
+<ul>
+<li><strong>Brief History</strong> <a href="https://www.blender.org/about/history/" title="History">LINK to Blender.org/History</a></li>
+</ul>
+<p>Blender 3D was initially a commercial software developed by Ton Roosendaal's company, Not a Number Technologies (NaN), in the late 1990s. However, when NaN went bankrupt in 2002, Roosendaal made Blender open-source. He founded the Blender Foundation to oversee the project and used crowdfunding and sponsorships for its support. Blender's transition to open-source led to its widespread use in 3D modeling, animation, and visual effects, with a global community of users and contributors.</p>
+<ul>
+<li><strong>Port to Linux</strong> <a href="https://en.wikipedia.org/wiki/Linux" title="Linux">LINK to Wikipedia</a></li>
+</ul>
+<p>Blender was ported to Linux in the early 2000s as part of the open-source development process, which involved adapting its code to Linux's libraries and system calls. Blender was tested on various distributions and hardware configurations to address any issues, and it is now available on Linux, macOS, and Windows. The Linux version of Blender is popular among artists, designers, and developers who prefer open-source software and value the flexibility of Linux.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="free--open-source-software-foss"><a class="header" href="#free--open-source-software-foss">Free &amp; Open Source Software (F.O.S.S)</a></h2>
+<ul>
+<li><strong>Transparency</strong> <a href="https://projects.blender.org/blender/blender" title="Blender Repo">LINK to Git Repository</a></li>
+</ul>
+<p>Transparency in open source software refers to the practice of freely sharing the source code, enabling users to access, review, and modify it. It promotes collaboration and innovation, as developers can contribute to existing projects and improve them. The transparency fosters a community-driven approach, allowing for continuous improvement and evolution.</p>
+<ul>
+<li><strong>Unexpected outcomes</strong> <a href="https://www.blender.org/user-stories/nasas-experience-curiosity/" title="NASA Curiosity Rover">Link to Mars Rover Project</a></li>
+</ul>
+<p>A controllable Rover web-app, Experience Curiosity, to simulated space exploration of Exoplanets, to mobile-based Augmented Reality.</p>
+<p>Brian Kumanchik, Project Lead &amp; Art Director of NASA Jet Propulsion Laboratory implemented Blender into the workflow of JPL because it has a mature WebGL engine for interactive 3D browswer experiences.</p>
+<ul>
+<li><strong>Unexpected outcomes</strong> <a href="https://www.researchgate.net/figure/Blender-interface-with-VI-Suite-elements_fig6_319700974" title="Envrionemental Analysis Modification">Environmental Analysis Tool</a></li>
+</ul>
+<p>Background The VI-Suite is a free and open-source addon for the 3D content creation application Blender, developed primarily as a tool for the contextual and performative analysis of buildings. Its functionality has grown from simple, static lighting analysis to fully parametric lighting, shadowing, and building energy analyses.</p>
+<ul>
+<li>
+<p><strong>Communication</strong> <a href="https://www.youtube.com/@BlenderOfficial/videos" title="Official Youtube Channel">Link to Blender Official YT Channel</a></p>
+</li>
+<li>
+<p><strong>The licensing allows for</strong></p>
+</li>
+</ul>
+<ol>
+<li>The freedom to use the software for any purpose</li>
+<li>The freedom to access and examine the source code</li>
+<li>The freedom to modify the software and distribute modifications</li>
+<li>The freedom to distribute copies of the software to others</li>
+</ol>
+<p>Together, these four freedoms give users and developers the ability to understand, modify, and distribute open source software without any limitations, promoting transparency, collaboration, and innovation in the software industry.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="3d-graphics-concepts"><a class="header" href="#3d-graphics-concepts">3D Graphics concepts</a></h2>
+<ul>
+<li><strong>Graphical Advantage</strong></li>
+</ul>
+<p>Polygon modeling offers several efficiencies over other forms of 3D graphics, such as NURBS and sculpting. Here are some advantages of polygon modeling:</p>
+<ol>
+<li>
+<p>Flexibility: Polygon modeling allows for great flexibility in terms of creating different shapes and structures. It is easier to create complex geometric shapes with polygon modeling than with other techniques, and it is also easier to make changes to the model if needed.</p>
+</li>
+<li>
+<p>Real-time rendering: Polygon models are usually lightweight and easy to render in real-time, making them ideal for use in video games, virtual reality, and other real-time applications.</p>
+</li>
+<li>
+<p>Texturing: Polygon models are easy to texture and UV map, making them ideal for creating detailed and realistic models for film and gaming.</p>
+</li>
+<li>
+<p>Animation: Polygon models are easy to animate, and can be rigged and posed in a variety of ways, making them ideal for creating animated characters and objects.</p>
+</li>
+<li>
+<p>Efficiency: Polygon modeling is a relatively fast and efficient way of creating 3D models, making it a popular choice for many industries. It requires less processing power than other techniques, making it more accessible to a wider range of users.</p>
+</li>
+</ol>
+<ul>
+<li><strong>Polygon Mesh</strong> <a href="https://en.wikipedia.org/wiki/Polygon_mesh">LINK to Wikipedia</a></li>
+</ul>
+<p>Polygon modeling is a 3D computer graphics technique that uses interconnected flat polygons to define the shape of complex models. It offers flexibility and control, allowing for highly detailed and realistic designs with low processing requirements.</p>
+<ul>
+<li><strong>Normals</strong> <a href="https://en.wikipedia.org/wiki/Normal_(geometry)">LINK to Wikipedia</a></li>
+</ul>
+<p>Polygon normals are vectors that determine the orientation of a polygon in 3D space. They point outward from the polygon's surface and are calculated by taking the cross product of two edges. In computer graphics, polygon normals influence how light interacts with a model, affecting its shading, reflections, and specular highlights. They also determine the direction of surface-based effects.</p>
+<ul>
+<li><strong>Shaders</strong> <a href="https://en.wikipedia.org/wiki/Shader">LINK to Wikipedia</a></li>
+</ul>
+<p>Shaders are programs used in 3D computer graphics to control the appearance of surfaces and objects. They are written in a special programming language that allows them to manipulate the color, texture, and lighting of 3D models. Shaders are used to create a variety of visual effects, such as realistic lighting and shadows, reflections, and transparency. They can also be used to create special effects such as distortion, motion blur, and heat shimmer.</p>
+<ul>
+<li><strong>Texture Mapping</strong> <a href="https://en.wikipedia.org/wiki/Texture_mapping">LINK to Wikipedia</a></li>
+</ul>
+<p>Texture mapping is a technique used in 3D computer graphics to apply a 2D image or texture onto a 3D model's surface. It involves mapping each point on the surface of the model to a corresponding point on the 2D texture, using UV coordinates. Texture mapping is used to add detail and realism to 3D models, by applying textures such as wood, metal, or fabric. The texture can be manipulated and adjusted to fit the model's surface precisely.</p>
+<ul>
+<li><strong>UV Mapping</strong> <a href="https://en.wikipedia.org/wiki/UV_mapping">LINK to Wikipedia</a></li>
+</ul>
+<p>UV texture coordinates are a 2D coordinate system used to map a 2D image or texture onto a 3D model in 3D computer graphics. The letters "U" and "V" refer to the two dimensions of the coordinate system, which are perpendicular to each other and represent the horizontal and vertical axes of the texture image. The UV coordinates are assigned to each vertex of the 3D model, which allows the texture to be mapped onto the surface of the model in a precise and accurate way.</p>
+<ul>
+<li><strong>Types of Maps</strong> <a href="https://en.wikipedia.org/wiki/Displacement_mapping">LINK to Wikipedia</a></li>
+</ul>
+<p>There are several types of texture maps used in 3D computer graphics. Here are some of the most common types:</p>
+<ol>
+<li>
+<p>Diffuse map: This is the most basic type of texture map, and it defines the color and appearance of the surface of the 3D model.</p>
+</li>
+<li>
+<p>Normal map: This type of texture map is used to add detail and depth to a 3D model's surface by simulating the appearance of bumps and creases.</p>
+</li>
+<li>
+<p>Specular map: This type of texture map defines the reflective properties of a surface, determining how light interacts with the surface and creating the appearance of shiny or glossy materials.</p>
+</li>
+<li>
+<p>Ambient occlusion map: This type of texture map is used to add depth and realism to a 3D model by simulating the way light is absorbed and scattered by surfaces in the environment.</p>
+</li>
+<li>
+<p>Displacement map: This type of texture map is used to add highly detailed geometry to a 3D model's surface by creating the appearance of height and depth.</p>
+</li>
+<li>
+<p>Emissive map: This type of texture map is used to add the appearance of self-illumination or glowing parts to a 3D model.</p>
+</li>
+</ol>
+<p>These are just a few examples of the types of texture maps used in 3D computer graphics. Different types of texture maps can be combined and used together to create highly detailed and realistic 3D models.</p>
+<ul>
+<li><strong>RayTracing</strong> <a href="https://en.wikipedia.org/wiki/Ray_tracing_(graphics)">LINK to Wikipedia</a></li>
+</ul>
+<p>Ray tracing is a rendering technique that simulates the behavior of light as it interacts with objects in a scene. It works by tracing the path of light rays as they travel from a virtual camera through the scene and interact with objects, determining how the light is reflected and refracted by each object.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="interface-overview"><a class="header" href="#interface-overview">Interface Overview</a></h2>
+<ul>
+<li><strong>Splash Screen</strong> <a href="https://docs.blender.org/manual/en/latest/interface/window_system/splash.html" title="Blender Manual">LINK to Page</a></li>
+</ul>
+<p>The splash screen is a graphical image or animation that is displayed when an application or software program is launched.</p>
+<ul>
+<li><strong>Workspaces</strong> <a href="https://docs.blender.org/manual/en/3.4/_images/interface_window-system_workspaces_layout.png" title="Blender Manual">LINK to image</a></li>
+</ul>
+<p>A Blender workspace is a customized layout of windows and panels within the Blender interface that is designed to suit a particular workflow or task.</p>
+<ul>
+<li><strong>Workspace Layout</strong> <a href="https://docs.blender.org/manual/en/3.4/interface/window_system/workspaces.html" title="Blender Manual">LINK to image</a></li>
+</ul>
+<p>Workspaces are used to organize the various tools and features of Blender in a way that is most efficient and productive for the user. Each workspace can be customized to include different windows and panels, and can be saved and loaded for future use.</p>
+<ul>
+<li><strong>Top Bar</strong> <a href="https://docs.blender.org/manual/en/3.4/_images/interface_window-system_introduction_default-screen.png" title="Blender Manual">LINK to image</a></li>
+</ul>
+<p>The top bar in the Blender workspace is a horizontal bar located at the top of the interface, above the 3D viewport. It contains several menus and options that provide access to various features and settings in Blender. The top bar includes menus for file management, editing modes, object selection, view options, and rendering settings. It also includes buttons for adding objects, toggling between different modes, and accessing the preferences and add-ons. The top bar is a central location for many of Blender's most commonly used features and can be customized to include additional options or add-ons.</p>
+<ul>
+<li><strong>Status bar</strong> <a href="https://docs.blender.org/manual/en/3.4/interface/window_system/status_bar.html" title="Blender Manual">LINK to Page</a></li>
+</ul>
+<p>The status bar in Blender is a narrow horizontal panel located at the bottom of the interface, below the 3D viewport. It provides information about the current state of the program and the active tool or feature. The status bar displays important information such as the current mode, selected object or component, the number of vertices, edges, and faces in the active mesh, and the current frame number for animation playback. It also displays status messages and warnings, and provides access to various system settings and preferences. The status bar is a helpful tool for monitoring the progress of operations and keeping track of important information while working in Blender.</p>
+<ul>
+<li><strong>Tool Bar</strong> <a href="https://docs.blender.org/manual/en/3.4/interface/tool_system.html?highlight=tool%20bar#ui-region-toolbar" title="Blender Manual">LINK to Page</a></li>
+</ul>
+<p>(Hide &amp; Reveal with 'T')</p>
+<p>Located on the left-hand side of the Blender interface, the Blender Toolbar is a comprehensive collection of tools and functionalities. It offers quick access to a wide range of options for modeling, sculpting, texturing, animating, rendering, and more.</p>
+<ul>
+<li><strong>Outliner</strong> <a href="https://docs.blender.org/manual/en/3.4/editors/outliner/introduction.html" title="Blender Manual">LINK to Page</a></li>
+</ul>
+<p>The Blender Outliner is a hierarchical list view that provides a visual representation and organizational structure of the objects, collections, and data within a Blender scene.</p>
+<ul>
+<li><strong>Panels</strong> <a href="https://docs.blender.org/manual/en/3.4/interface/window_system/tabs_panels.html" title="Blender Manual">LINK to Page</a></li>
+</ul>
+<p>Tabs in the Blender UI refer to the horizontal tabs at the top of the interface that allow users to switch between different editor types and workspaces, providing a flexible and customizable layout.</p>
+<p>Panels in the Blender UI are vertical sections within editors that contain various settings, options, and tools related to specific functions, allowing users to access and modify specific aspects of their projects efficiently.</p>
+<ul>
+<li><strong>Modes</strong> Demonstration</li>
+</ul>
+<p>Blender modes are different editing contexts within the software that enable users to perform specific actions and manipulate objects, such as object mode for overall scene editing, edit mode for vertex-level modifications, and sculpt mode for more organic and detailed sculpting.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="viewport-navigation"><a class="header" href="#viewport-navigation">Viewport Navigation</a></h2>
+<p>Viewport navigation in Blender refers to the methods and controls used to navigate and explore the 3D Viewport, which is the main window where users interact with their 3D scenes.</p>
+<ul>
+<li>
+<p>Orbit: To orbit the view around the scene, hold down the middle mouse button and drag the mouse in the desired direction. Alternatively, you can press and hold Shift and the middle mouse button, then drag.</p>
+</li>
+<li>
+<p>Pan: To pan the view horizontally or vertically, hold down Shift and the middle mouse button, then drag the mouse.</p>
+</li>
+<li>
+<p>Zoom: To zoom in or out, scroll the middle mouse button up or down. Alternatively, you can use the "+" and "-" keys on the keyboard to zoom in and out, respectively.</p>
+</li>
+<li>
+<p><strong>Pan</strong> Shift + CMB (Centre Mouse Button)</p>
+</li>
+<li>
+<p><strong>Zoom</strong> Scroll Wheel</p>
+</li>
+<li>
+<p><strong>Zoom to Section</strong> Select item &gt; View menu &gt; Zoom to selection</p>
+</li>
+<li>
+<p><strong>Rotate</strong> CMB and move</p>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="select--transform"><a class="header" href="#select--transform">Select &amp; Transform</a></h2>
+<ul>
+<li><strong>Selection</strong> LMB (Left Mouse Button)</li>
+<li><strong>Multi Selection</strong> SHIFT + LMB (Left Mouse Button)</li>
+<li><strong>Grab / Move</strong> Select item &gt; View menu &gt; Zoom to selection</li>
+<li><strong>Rotate</strong> Hold CMB (Centre Mouse Button) and move mouse</li>
+<li><strong>Scale</strong> S</li>
+<li><strong>Axis locking</strong> X, Y, Z</li>
+<li><strong>3D Curser</strong> Shift + RMB (Right Mouse Button)</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="sidebar-menu"><a class="header" href="#sidebar-menu">Sidebar Menu</a></h2>
+<p><a href="https://docs.blender.org/manual/en/latest/interface/window_system/regions.html#sidebar">Link to Manual Page</a></p>
+<ul>
+<li><strong>Hide Show Sidebar</strong> N or Click Tab</li>
+<li><strong>Item Menu</strong> Demonstration</li>
+<li><strong>Tool Menu</strong> Demonstration</li>
+<li><strong>View Menu</strong> Demonstration</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="tool-bar"><a class="header" href="#tool-bar">Tool Bar</a></h2>
+<ul>
+<li><strong>Hide Show Tool Bar</strong>T or Click Tab</li>
+<li><strong>About</strong> [LINK to Page](https://docs.blender.org/manual/en/latest/interface/tool_system.html#ui-region-toolbar “Manual”)</li>
+<li><strong>Selection Tool</strong> Demonstration</li>
+<li><strong>View Menu</strong> Demonstration</li>
+<li><strong>Move</strong> Demonstration</li>
+<li><strong>Rotate</strong> Demonstration</li>
+<li><strong>Scale</strong> Demonstration</li>
+<li><strong>Transform</strong> Demonstration</li>
+<li><strong>Annotate</strong> Demonstration</li>
+<li><strong>Measure</strong> Demonstration</li>
+<li><strong>Add Primitive</strong> Demonstration</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="adding--removing-objects"><a class="header" href="#adding--removing-objects">Adding &amp; Removing Objects</a></h2>
+<p>In Blender, adding items is done by utilizing specific shortcuts to quickly create objects or elements within the scene, such as Shift + A to bring up the Add menu and choose from a variety of primitives or Shift + A, followed by M, to add a new material.</p>
+<p>On the other hand, deleting items is typically done by selecting the desired object or element and pressing the Delete key or X key, which brings up a menu with options to delete the selected item, vertices, edges, or faces, depending on the active mode (Edit mode, Vertex mode, etc.). Additionally, using the shortcut Shift + X allows for deleting only the selected vertices, edges, or faces without deleting the entire object.</p>
+<ul>
+<li><strong>Adding items to scene</strong> SHIFT + A</li>
+<li><strong>Deleting</strong> X</li>
+<li><strong>Context Menu</strong> Demonstration</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="outliner"><a class="header" href="#outliner">Outliner</a></h2>
+<p>The Blender Outliner is a powerful tool for managing objects, collections, and data within a scene. It provides an organized hierarchical view of the elements in the scene and allows for efficient selection, organization, and management.</p>
+<p>Associated shortcuts for using the Outliner include:</p>
+<ul>
+<li>
+<p><strong>Hiding/Showing</strong> Pressing H to hide selected items or Alt + H to unhide all hidden items.</p>
+</li>
+<li>
+<p><strong>Selecting/Deselecting</strong> Clicking on an item in the Outliner selects it, and Shift + Clicking allows for selecting multiple items. Pressing A selects or deselects all items.</p>
+</li>
+<li>
+<p><strong>Parenting</strong> Dragging an item onto another in the Outliner establishes a parent-child relationship.</p>
+</li>
+<li>
+<p><strong>Renaming</strong> Pressing F2 or double-clicking on an item's name allows for renaming it.</p>
+</li>
+<li>
+<p><strong>Deleting</strong> Pressing X or Delete removes the selected item(s) from the scene.</p>
+</li>
+<li>
+<p><strong>Collection Operations</strong> Right-clicking on a collection in the Outliner brings up a context menu with various collection-related operations, such as creating, linking, or* unlinking collections.</p>
+</li>
+<li>
+<p><strong>Adding scene items</strong> SHIFT + A</p>
+</li>
+<li>
+<p><strong>Selecting multiple items</strong> Shift + LMB</p>
+</li>
+<li>
+<p><strong>Creating a collection</strong> M</p>
+</li>
+<li>
+<p><strong>Selecting collection</strong> Demonstration</p>
+</li>
+<li>
+<p><strong>Intro</strong> <a href="https://docs.blender.org/manual/en/latest/scene_layout/view_layers/introduction.html?highlight=outliner">LINK to Manual</a></p>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="areas--windows"><a class="header" href="#areas--windows">Areas &amp; Windows</a></h2>
+<p>In Blender, areas and windows refer to the various panels and regions within the user interface where different editors and tools are displayed, providing a flexible workspace for working on different aspects of a project simultaneously.</p>
+<p>Associated shortcuts for managing areas and windows in Blender include:</p>
+<ul>
+<li>
+<p>Splitting Areas: To split an area into two, position the mouse cursor over the border between two areas and press the left mouse button. Alternatively, use the shortcut Ctrl + Alt + Q to split the active area vertically or Ctrl + Alt + W to split it horizontally.</p>
+</li>
+<li>
+<p>Joining Areas: To join two areas into one, position the mouse cursor over the border between them, press Ctrl + Alt + J, and click with the left mouse button.</p>
+</li>
+<li>
+<p>Switching Editor Types: To switch the active editor type within an area, use the shortcut Ctrl + Left/Right Arrow keys or Ctrl + Up/Down Arrow keys.</p>
+</li>
+<li>
+<p>Maximizing an Area: To maximize the active area, press Ctrl + Up Arrow or Ctrl + Down Arrow.</p>
+</li>
+<li>
+<p>Toggling Full Screen: Pressing Shift + Spacebar toggles the current area into full-screen mode.</p>
+</li>
+<li>
+<p>Zooming in/out: Use the middle mouse button scroll or the '+' and '-' keys to zoom in and out within an area.</p>
+</li>
+<li>
+<p><strong>Intro</strong> <a href="https://docs.blender.org/manual/en/latest/interface/window_system/areas.html?highlight=areas">LINK to Manual</a></p>
+</li>
+<li>
+<p><strong>Resizing</strong> RMB on edge / Demonstration</p>
+</li>
+<li>
+<p><strong>Splitting</strong> RMB on edge / Demonstration</p>
+</li>
+<li>
+<p><strong>Joining</strong> RMB on edge / Demonstration</p>
+</li>
+<li>
+<p><strong>Open Window</strong> Demonstration</p>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="editor-types"><a class="header" href="#editor-types">Editor Types</a></h2>
+<h3 id="edit-mode"><a class="header" href="#edit-mode">Edit Mode</a></h3>
+<p>The 1, 2, and 3 keyboard commands in Blender are used to quickly access different selection modes within Edit mode in the 3D Viewport editor. These shortcuts allow users to switch between selecting vertices, edges, and faces with ease.</p>
+<p><strong>1: Vertex Selection Mode</strong></p>
+<p>Pressing the <code>1</code> key enters Vertex selection mode in Edit mode. This allows users to select individual vertices of a mesh for editing or manipulation.</p>
+<p><strong>2: Edge Selection Mode</strong></p>
+<p>Pressing the <code>2</code> key activates Edge selection mode. In this mode, users can select edges of the mesh, which can be useful for tasks such as edge extrusion or creating sharp edges.</p>
+<p><strong>3: Face Selection Mode</strong></p>
+<p>Pressing the <code>3</code> key switches to Face selection mode. This mode enables users to select entire faces of the mesh, which is particularly handy for tasks like extruding or modifying large surface areas.</p>
+<p>Edit mode in Blender is a specific mode within the 3D Viewport editor that allows users to modify the geometry of selected objects at the vertex, edge, or face level. It provides a range of tools and shortcuts for precise editing and manipulation of the mesh.</p>
+<p>Here are some associated shortcuts commonly used in Edit mode:</p>
+<p><strong>Selection:</strong></p>
+<ul>
+<li>Right-click: Selects a vertex, edge, or face under the cursor.</li>
+<li><code>B</code>: Activates box selection, allowing users to drag a selection box to select multiple vertices, edges, or faces.</li>
+<li><code>C</code>: Enables circle selection, where users can select vertices, edges, or faces within a circular area.</li>
+<li><code>Ctrl + Left-click</code>: Adds or removes vertices, edges, or faces from the selection.</li>
+<li><code>Ctrl + L</code>: Selects all connected vertices, edges, or faces to the currently selected element.</li>
+</ul>
+<p><strong>Transformation:</strong></p>
+<ul>
+<li><code>G</code>: Translates (moves) selected vertices, edges, or faces.</li>
+<li><code>R</code>: Rotates selected vertices, edges, or faces.</li>
+<li><code>S</code>: Scales selected vertices, edges, or faces.</li>
+<li><code>Alt + G</code>: Resets the translation (moves) of selected vertices, edges, or faces.</li>
+<li><code>Alt + R</code>: Resets the rotation of selected vertices, edges, or faces.</li>
+<li><code>Alt + S</code>: Resets the scale of selected vertices, edges, or faces.</li>
+</ul>
+<p><strong>Mesh Editing:</strong></p>
+<ul>
+<li><code>E</code>: Extrudes selected vertices, edges, or faces to create new geometry.</li>
+<li><code>F</code>: Creates an edge or face between selected vertices or edges.</li>
+<li><code>Ctrl + R</code>: Activates the Loop Cut tool, allowing users to create new edge loops.</li>
+<li><code>Ctrl + B</code>: Enables the Bevel tool, which creates beveled edges or faces.</li>
+</ul>
+<p><strong>Vertex/Edge/Face Operations:</strong></p>
+<ul>
+<li><code>Ctrl + V</code>: Opens the Vertex context menu with various vertex-related operations.</li>
+<li><code>Ctrl + E</code>: Opens the Edge context menu with various edge-related operations.</li>
+<li><code>Ctrl + F</code>: Opens the Face context menu with various face-related operations.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="edit-mode-toolbar"><a class="header" href="#edit-mode-toolbar">Edit Mode Toolbar</a></h2>
+<p>The Editor Toolbar in Blender is a set of tools and options available within each editor window. It provides quick access to commonly used functions and settings specific to the active editor, enhancing productivity and workflow efficiency.</p>
+<p>The Editor Toolbar typically appears at the top of the editor window and contains various icons, buttons, menus, and dropdowns. The specific tools and options present in the toolbar depend on the type of editor currently active.</p>
+<p>For example, in the 3D Viewport editor, the toolbar may include tools for object manipulation (such as selection, transformation, and duplication), options for shading and display modes, rendering settings, and viewport navigation controls.</p>
+<p>In the UV/Image Editor, the toolbar may offer tools for UV mapping, texture painting, image manipulation, and adjustment settings.</p>
+<p>The Properties Editor has its own toolbar that displays options related to the selected object or scene properties, materials, textures, and more.</p>
+<p>Similarly, other editor types in Blender have their respective toolbars tailored to the specific functionalities and tasks associated with them.</p>
+<p>The Editor Toolbar serves as a convenient and easily accessible interface for performing actions and adjusting settings within the active editor. It allows users to efficiently navigate, manipulate, and customize their workflow, ensuring a smooth and intuitive experience in Blender.</p>
+<ul>
+<li><strong>Editor Toolbar</strong> <a href="https://docs.blender.org/manual/en/latest/modeling/meshes/tools/toolbar.html#mesh-toolbar-index">LINK to Manual</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="homework-if-possible"><a class="header" href="#homework-if-possible">Homework (If possible)</a></h1>
+<p>Please take a moment to scroll back through this page and review each section, testing the techniques mentioned along the way. Additionally, Session #2 is available for your review if you are interested in previewing what we will be building next week. Feel free to explore and familiarize yourself with the upcoming content.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="session-2"><a class="header" href="#session-2">Session #2</a></h1>
+<h2 id="workshop-session"><a class="header" href="#workshop-session">Workshop session</a></h2>
+<ol start="23">
+<li>Render output</li>
+</ol>
+<ul>
+<li>Demonstration</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="creation-of-a-cylinder-primitive"><a class="header" href="#creation-of-a-cylinder-primitive">Creation of a cylinder primitive</a></h3>
+<ul>
+<li>Press Shift + A to open the Add menu.</li>
+<li>In the Add menu, hover the cursor over "Mesh" to open the mesh options.</li>
+<li>Press C to access the "Cylinder" option.</li>
+<li>By default, Blender creates the cylinder at the origin (0, 0, 0) with a radius of 1 and a height of 2 units.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="flaring-cylinder-ends"><a class="header" href="#flaring-cylinder-ends">Flaring cylinder end(s)</a></h3>
+<ul>
+<li>With the cylinder selected, navigate to the top menu bar and click on the "Edit" menu or by pressing "Tab".</li>
+<li>Press "3" this will activate face select mode.</li>
+<li>Now, click on one of the faces at the end of the cylinder that you want to enlarge. This will select the face.</li>
+<li>To enlarge the selected face, press the S keyboard shortcut for scale.</li>
+<li>Move the mouse cursor away from the face to start enlarging it. As you move the mouse further away, the face will increase in size.</li>
+<li>Once you are satisfied with the size of the face, left-click to confirm the transformation.</li>
+<li>Exit Edit mode by pressing Tab, this will bring you back to default object mode.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="positioning-offset-from-centerline"><a class="header" href="#positioning-offset-from-centerline">Positioning Offset from Centerline</a></h3>
+<h4 id="using-sidebar-menu--item--transform-properties"><a class="header" href="#using-sidebar-menu--item--transform-properties">Using Sidebar Menu &gt; Item &gt; Transform Properties</a></h4>
+<ul>
+<li>Select the object you want to manipulate by clicking on it in the 3D viewport.</li>
+<li>Locate the sidebar menu on the right-hand side of the Blender interface. If it's not visible, you can toggle it on and off by pressing the N key.</li>
+<li>In the sidebar, find the "Item" tab, which is represented by an icon with a cube shape.</li>
+<li>Within the "Item" tab, you will find various transformation options such as location, rotation, and scale.</li>
+<li>To change the position of the object, adjust the values under the "Location" section. You can enter specific numerical values or use the arrows to incrementally move the object * along the X, Y, and Z axes.</li>
+</ul>
+<p>Or</p>
+<h4 id="by-using-grab-g"><a class="header" href="#by-using-grab-g">By Using Grab (G)</a></h4>
+<ul>
+<li>Select the object you want to move by clicking on it in the 3D viewport. You can also select multiple objects by holding down the Shift key and clicking on each object.</li>
+<li>Press the G key on your keyboard to activate the "Grab" or move tool. This allows you to move the selected object(s).</li>
+<li>Press the X key on your keyboard to constrain the movement to the X-axis.</li>
+<li>Now, you can use the mouse to move the object back and forth along the X-axis. Simply move the mouse in the desired direction.</li>
+<li>Alternatively, if you want to move the object on the Z-axis by a specific distance, you can type a numerical value on your keyboard. For example, if you want to move the object 2 units up on the X-axis, type "2" and then press Enter.</li>
+<li>Once you have positioned the object at the desired location on the Z-axis, left-click the mouse or press Enter to confirm the movement.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="adding-empty-using-for-mirroring"><a class="header" href="#adding-empty-using-for-mirroring">Adding Empty using for mirroring</a></h3>
+<ul>
+<li>Make sure you are in Object Mode by selecting it from the mode selector dropdown at the top of the Blender interface.</li>
+<li>Right-click in the 3D viewport to ensure no object is selected. This step ensures that the new empty axis will be added as a separate object.</li>
+<li>Press the Shift + A keys on your keyboard. This brings up the Add menu.</li>
+<li>From the Add menu, select "Empty" under the "Mesh" section. You can use the mouse to navigate the menu or press the letter E on your keyboard to quickly jump to the "Empty" option.</li>
+<li>Once you select "Empty," a new empty axis object will be added to the scene at the location of the 3D cursor, which is represented as a small gray crosshair.</li>
+<li>To move the empty axis to a specific location, you can use the transformation tools. For example, you can press the G key to activate the "Grab" tool, then use the mouse to move the empty axis to the desired position.</li>
+<li>Additionally, you can modify the properties of the empty axis by selecting it in the 3D viewport and accessing its properties in the Object Properties panel.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="parenting-an-object-to-the-empty"><a class="header" href="#parenting-an-object-to-the-empty">Parenting an object to the Empty</a></h3>
+<ul>
+<li>Select the object(s) that you want to parent to the empty axis. You can select multiple objects by holding down the Shift key while clicking on each object.</li>
+<li>Shift-select the empty axis object to make it the active object. The active object is the last object selected and will be the parent of the other selected objects.</li>
+<li>Press Ctrl + P on your keyboard to bring up the Parent menu.</li>
+<li>From the Parent menu, select "Object" to parent the selected objects to the empty axis.</li>
+<li>The selected objects will now be parented to the empty axis. You can verify this by moving or rotating the empty axis, and the child objects will follow along.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="applying-subdivision-surface-modifier"><a class="header" href="#applying-subdivision-surface-modifier">Applying subdivision surface modifier</a></h3>
+<ul>
+<li>Select the object to which you want to apply the Subdivision Surface modifier.</li>
+<li>Make sure you are in Object Mode. You can switch to Object Mode by pressing the Tab key on your keyboard and selecting "Object Mode" from the mode selector in the bottom-left corner of the Blender interface.</li>
+<li>Press Ctrl+3 on your keyboard. This shortcut applies the Subdivision Surface modifier and sets the viewport subdivision level to 3. The object will now appear smoother and more subdivided.</li>
+</ul>
+<p>Note: The Ctrl+3 shortcut is a quick way to set the subdivision level to 3, but you can also manually adjust the subdivision level in the modifier settings if desired.</p>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="inseting-extruding-and-scaling-faces"><a class="header" href="#inseting-extruding-and-scaling-faces">Inseting, Extruding and Scaling faces</a></h3>
+<ul>
+<li>
+<p>Enter Edit Mode by selecting the object and pressing the Tab key.</p>
+</li>
+<li>
+<p>Select the face or faces you want to manipulate. You can use selection tools like right-clicking, box selection (B), or circle selection (C) to choose the desired faces.</p>
+</li>
+<li>
+<p>To inset the selected faces, press the I key. You can control the inset depth by moving the mouse or inputting specific numerical values. Left-click or press Enter to confirm the inset.</p>
+</li>
+<li>
+<p>To extrude the selected faces, press the E key. Move the mouse or enter numerical values to define the extrusion distance or direction. Left-click to confirm the extrusion.</p>
+</li>
+<li>
+<p>To scale the selected faces, press the S key. Move the mouse to scale the faces interactively or input numerical values for precise scaling. Left-click to confirm the scaling.</p>
+</li>
+<li>
+<p>You can also constrain the extrusion or scaling to a specific axis by pressing X, Y, or Z after initiating the extrusion or scaling operation. This constrains the operation to the corresponding axis.</p>
+</li>
+<li>
+<p>After performing the desired transformations, you can further manipulate the geometry by translating, rotating, or scaling the newly created faces or vertices.</p>
+</li>
+<li>
+<p>To exit Edit Mode, press the Tab key again.</p>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="applying-the-objects-scale"><a class="header" href="#applying-the-objects-scale">Applying the objects scale</a></h3>
+<ul>
+<li>Select the object you want to apply the scale to. You can select an object by right-clicking on it in the 3D Viewport.</li>
+<li>Make sure you are in Object Mode. You can switch to Object Mode by pressing the Tab key on your keyboard and selecting "Object Mode" from the mode selector in the bottom-left corner of the Blender interface.</li>
+<li>Go to the "Object" menu at the top of the Blender interface.</li>
+<li>From the "Object" menu, choose "Apply" and then select "Scale" from the submenu. Alternatively, you can use the shortcut Ctrl+A and then choose "Scale" from the options.</li>
+<li>After applying the scale, the object's scale will be set to 1, effectively resetting any scaling transformations that were previously applied to the object. The object's size will appear normalized based on its new scale.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="adding-loop-cuts"><a class="header" href="#adding-loop-cuts">Adding loop cuts</a></h3>
+<p>Select the cylinder object in Edit Mode. You can switch to Edit Mode by pressing the Tab key on your keyboard and selecting "Edit Mode" from the mode selector in the upper-left corner of the Blender interface. Or switch to edit mode using Tab.</p>
+<p>Locate the area on the cylinder where you want to add the edge loop.</p>
+<h4 id="using-the-regular-method"><a class="header" href="#using-the-regular-method">Using the regular method:</a></h4>
+<ul>
+<li>Ensure you are in Edge Select mode. You can switch to Edge Select mode by pressing the 2 key on your keyboard or by selecting the "Edge Select" option from the selection mode dropdown in the header of the 3D Viewport.</li>
+<li>Right-click on one of the edges that surround the desired location for the edge loop to select it.</li>
+<li>With the edge selected, navigate to the Mesh menu at the top of the Blender interface and choose "Edge" -&gt; "Edge Loop" -&gt; "Slide" or simply press the Ctrl+R shortcut.</li>
+<li>Move your mouse to adjust the position of the edge loop and left-click to confirm its placement. You can also use the scroll wheel to add more edge loops.</li>
+<li>Left-click again or press Enter to finalize the edge loop.</li>
+</ul>
+<h4 id="using-shortcuts"><a class="header" href="#using-shortcuts">Using shortcuts:</a></h4>
+<ul>
+<li>Ensure you are in Edge Select mode.</li>
+<li>Select one of the edges surrounding the desired location.</li>
+<li>Press Ctrl+R to activate the Loop Cut tool.</li>
+<li>Move your mouse to adjust the position of the edge loop and left-click to confirm.</li>
+<li>Slide the edge loop to the desired location and left-click again to finalize.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="applying-bevels"><a class="header" href="#applying-bevels">Applying Bevels</a></h3>
+<ul>
+<li>elect the cylinder object in Edit Mode (Tab).</li>
+<li>hoose the end faces you want to bevel using selection tools like right-clicking, box selection (B), or circle selection (C).</li>
+<li>o to the "Mesh" menu and select "Bevel" or "Bevel Faces".</li>
+<li>djust the bevel settings in the Bevel tool options.* Confirm the operation by left-clicking or pressing Enter.</li>
+</ul>
+<p>Shortcut: Tab to switch to Edit Mode, B for box selection, C for circle selection.</p>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="contiguous-selections--deselections"><a class="header" href="#contiguous-selections--deselections">Contiguous selections &amp; Deselections</a></h3>
+<h4 id="contiguous-selections"><a class="header" href="#contiguous-selections">Contiguous Selections</a></h4>
+<ul>
+<li>Enter Edit Mode (Tab).</li>
+<li>Activate the selection tool (such as right-clicking, box selection (B), or circle selection (C)).</li>
+<li>Click on the starting vertex, edge, or face you want to select.</li>
+<li>While holding down the Shift key, click on the ending vertex, edge, or face of the desired selection range.</li>
+<li>Blender will select all the vertices, edges, or faces between the starting and ending points.</li>
+</ul>
+<h4 id="contiguous-deselections"><a class="header" href="#contiguous-deselections">Contiguous Deselections</a></h4>
+<ul>
+<li>Enter Edit Mode (Tab).</li>
+<li>Activate the selection tool (such as right-clicking, box selection (B), or circle selection (C)).</li>
+<li>Click on the starting vertex, edge, or face you want to deselect.</li>
+<li>While holding down the Shift key, click on the ending vertex, edge, or face of the desired deselection range.</li>
+<li>Blender will deselect all the vertices, edges, or faces between the starting and ending points.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="duplicating-and-separating-faces"><a class="header" href="#duplicating-and-separating-faces">Duplicating and separating faces</a></h3>
+<h4 id="duplicating-faces"><a class="header" href="#duplicating-faces">Duplicating Faces</a></h4>
+<ul>
+<li>Enter Edit Mode (Tab).</li>
+<li>Select the faces you want to duplicate using the selection tools like right-clicking, box selection (B), or circle selection (C).</li>
+<li>Press Shift + D to duplicate the selected faces.</li>
+<li>Move the duplicated faces to the desired location by translating, rotating, or scaling them.</li>
+<li>Left-click or press Enter to confirm the placement of the duplicated faces.</li>
+</ul>
+<h4 id="separating-faces"><a class="header" href="#separating-faces">Separating Faces</a></h4>
+<ul>
+<li>Enter Edit Mode (Tab).</li>
+<li>Select the faces you want to separate using the selection tools like right-clicking, box selection (B), or circle selection (C).</li>
+<li>Press P to open the Separate menu.</li>
+<li>Choose "Selection" from the Separate menu options to separate the selected faces into a new object.</li>
+<li>The separated faces will now be in a new object, while the original object retains the remaining faces.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="knife-tool---cutting-through"><a class="header" href="#knife-tool---cutting-through">Knife Tool - Cutting Through</a></h3>
+<ul>
+<li>Before starting, make sure the camera is in a projected view that allows you to accurately visualize the cutting path.</li>
+<li>Enter Edit Mode (Tab).</li>
+<li>Press K to activate the Knife tool.</li>
+<li>Click on the starting point of the cut on the object.</li>
+<li>Move the mouse cursor along the desired cutting path.</li>
+<li>Left-click to create a cut.</li>
+<li>Continue creating additional cuts as needed by left-clicking at different points along the cutting path.</li>
+<li>To finish the cut, press Enter or right-click.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="isolation--exit-isolation"><a class="header" href="#isolation--exit-isolation">Isolation &amp; Exit isolation</a></h3>
+<h4 id="isolation-mode"><a class="header" href="#isolation-mode">Isolation Mode</a></h4>
+<ul>
+<li>Select the object or objects you want to isolate.</li>
+<li>Press the forward slash key (/) on the keyboard.</li>
+<li>Blender will enter isolation mode, hiding all other objects except for the selected ones.</li>
+</ul>
+<h4 id="exiting-isolation-mode"><a class="header" href="#exiting-isolation-mode">Exiting Isolation Mode</a></h4>
+<ul>
+<li>To exit isolation mode, press the forward slash key (/) again.</li>
+<li>Blender will return to the regular view, showing all objects in the scene.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="applying-the-solidify-modifier"><a class="header" href="#applying-the-solidify-modifier">Applying the solidify modifier</a></h3>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="duplicating-and-separating-the-cut-faces-to-create-the-grip"><a class="header" href="#duplicating-and-separating-the-cut-faces-to-create-the-grip">Duplicating and separating the cut faces to create the grip</a></h3>
+<h4 id="duplicating-faces-1"><a class="header" href="#duplicating-faces-1">Duplicating Faces</a></h4>
+<ul>
+<li>Enter Edit Mode (Tab).</li>
+<li>Select the faces you want to duplicate using the selection tools like right-clicking, box selection (B), or circle selection (C).</li>
+<li>Press Shift + D to duplicate the selected faces.</li>
+<li>Move the duplicated faces to the desired location by translating, rotating, or scaling them.</li>
+<li>Left-click or press Enter to confirm the placement of the duplicated faces.</li>
+</ul>
+<h4 id="separating-faces-1"><a class="header" href="#separating-faces-1">Separating Faces</a></h4>
+<ul>
+<li>Enter Edit Mode (Tab).</li>
+<li>Select the faces you want to separate using the selection tools like right-clicking, box selection (B), or circle selection (C).</li>
+<li>Press P to open the Separate menu.</li>
+<li>Choose "Selection" from the Separate menu options to separate the selected faces into a new object.</li>
+<li>The separated faces will now be in a new object, while the original object retains the remaining faces.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="creating--naming-materials"><a class="header" href="#creating--naming-materials">Creating &amp; Naming Materials</a></h3>
+<ul>
+<li>Select the object or objects to which you want to assign a material by clicking on them in the 3D viewport.</li>
+<li>Go to the "Material" tab in the Properties panel (located in the sidebar on the right-hand side of the Blender interface, usually accessed by pressing the N key).</li>
+<li>If no material slots are available, click the "+" button next to the material list to add a new material slot for the selected object(s).</li>
+<li>With the material slot selected, click the "New" button to create a new material. By default, it will be named "Material".</li>
+<li>To rename the material, click on the material's name field (e.g., "Material") and enter a new name for the material. Press Enter to confirm the new name.</li>
+<li>Adjust the material's properties, such as its color, roughness, metallicness, or any other desired attributes, using the various options available in the material settings.</li>
+<li>If you want to assign the material to other objects, select the objects and click the material dropdown menu in the material slot. Choose the desired material name from the list.</li>
+</ul>
+<p>Repeat the process to create and name additional materials as needed.</p>
+<p>Naming materials is helpful for better organization and easy identification of materials when working on complex scenes with multiple objects. It allows you to assign different appearances, properties, and textures to specific materials, enhancing the overall visual quality of your work in Blender.</p>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="applying-single--multiple-materials-to-a-single-objects"><a class="header" href="#applying-single--multiple-materials-to-a-single-objects">Applying Single &amp; Multiple materials to a single objects</a></h3>
+<p>Applying a Single Material</p>
+<ul>
+<li>
+<p>With the material slot selected, click the "New" button to create a new material. By default, it will be named "Material".</p>
+</li>
+<li>
+<p>Adjust the properties of the material, such as its color, roughness, or any other desired attributes, using the various options available in the material settings.</p>
+</li>
+<li>
+<p>The single material is automatically assigned to the entire object.</p>
+</li>
+</ul>
+<p>Applying Multiple Materials</p>
+<ul>
+<li>
+<p>To apply multiple materials, click the "+" button next to the material list to add additional material slots for the selected object.</p>
+</li>
+<li>
+<p>With a new material slot selected, click the "New" button to create a new material. By default, it will be named "Material.001". Repeat this step for each additional material you want to apply.</p>
+</li>
+<li>
+<p>Adjust the properties of each material as desired.</p>
+</li>
+<li>
+<p>In Edit Mode, select the faces or parts of the object to which you want to assign a specific material.</p>
+</li>
+<li>
+<p>In the material slots, click the material dropdown menu for the selected faces or parts, and choose the desired material name from the list. Repeat this step for each material you want to assign to different parts of the object.</p>
+</li>
+<li>
+<p>The selected faces or parts will now have the assigned material(s), and you can adjust the properties of each material individually to achieve different visual effects.</p>
+</li>
+</ul>
+<p>By applying single or multiple materials to a single object, you can create complex and visually appealing models with varied appearances for different parts or components of the object.</p>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="scene-setup--management-grouping--naming"><a class="header" href="#scene-setup--management-grouping--naming">Scene setup &amp; Management (Grouping &amp; Naming)</a></h3>
+<h4 id="grouping-objects"><a class="header" href="#grouping-objects">Grouping Objects:</a></h4>
+<ol start="4">
+<li>Select the objects you want to group together. You can select multiple objects by holding down the Shift key while clicking on each object.</li>
+</ol>
+<ul>
+<li>
+<p>Press Ctrl + G to create a new group. A pop-up window will appear, allowing you to name the group. Enter a descriptive name for the group and press Enter to confirm.</p>
+</li>
+<li>
+<p>The selected objects are now grouped together under the specified name.</p>
+</li>
+</ul>
+<h4 id="naming-objects"><a class="header" href="#naming-objects">Naming Objects:</a></h4>
+<ul>
+<li>
+<p>Select an object by clicking on it in the 3D viewport.</p>
+</li>
+<li>
+<p>In the "Object" tab of the Properties panel (located in the sidebar on the right-hand side of the Blender interface, usually accessed by pressing the N key), locate the "Object" section.</p>
+</li>
+<li>
+<p>Find the "Name" field under the "Object" section and enter a meaningful name for the object.</p>
+</li>
+<li>
+<p>Press Enter to confirm the new name.</p>
+</li>
+<li>
+<p>Repeat this process for each object in your scene, giving them descriptive names to help organize and identify them easily.</p>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="lighting-setup"><a class="header" href="#lighting-setup">Lighting setup</a></h3>
+<ul>
+<li>
+<p>Open Blender and ensure you have a scene set up with objects.</p>
+</li>
+<li>
+<p>In the 3D viewport, make sure you are in "Object Mode" by pressing the Tab key if necessary.</p>
+</li>
+<li>
+<p>By default, Blender starts with a basic light source called "Lamp". You can adjust this light or add additional lights for more control and realism.</p>
+</li>
+<li>
+<p>To add a new light, go to the "Add" menu at the top of the 3D viewport or use the Shift + A shortcut. Choose "Light" and select the type of light you want to add (e.g., "Point", "Sun", "Area", "Spot", etc.). The new light will be placed at the origin (0, 0, 0) in the scene.</p>
+</li>
+<li>
+<p>Position the light source by selecting it and using the Move (shortcut: G) and Rotate (shortcut: R) tools to place it where you want. You can also adjust the light's properties in the "Light" tab of the Properties panel (located in the sidebar on the right-hand side of the Blender interface, usually accessed by pressing the N key).</p>
+</li>
+<li>
+<p>Experiment with different types of lights and their properties to achieve the desired lighting setup. For example, a "Point" light emits light in all directions, while a "Sun" light mimics the sun's directional light.</p>
+</li>
+</ul>
+<p>You can also adjust the strength (intensity) of the light source in the "Light" tab or directly in the 3D viewport by selecting the light and adjusting the Strength value.</p>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="camera-setup"><a class="header" href="#camera-setup">Camera setup</a></h3>
+<ul>
+<li>Demonstration</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="render-settings-passes-denoising-filetype"><a class="header" href="#render-settings-passes-denoising-filetype">Render settings (Passes, Denoising, Filetype)</a></h3>
+<ul>
+<li>Demonstration</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="render-output"><a class="header" href="#render-output">Render output</a></h3>
+<ul>
+<li>Demonstration</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="resource-files"><a class="header" href="#resource-files">Resource Files</a></h3>
+<h4 id="download-binocular-file"><a class="header" href="#download-binocular-file"><a href="dl/Binoculars/bin.blend">Download Binocular File</a></a></h4>
+<h4 id="download-example-render"><a class="header" href="#download-example-render"><a href="dl/Binoculars/bin.png">Download Example Render</a></a></h4>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="session-3"><a class="header" href="#session-3">Session #3</a></h1>
+<h2 id="course-intro"><a class="header" href="#course-intro">Course Intro</a></h2>
+<p>In this second half of Intro to Blender, we will follow a lecture format with demonstrations. I strongly encourage you to actively participate by trying to mimic the demos as they are presented. This hands-on approach will enhance your learning experience and allow you to gain practical skills by actively engaging with the material.</p>
+<p>Given the extensive amount of concepts to cover during these three hours, it is highly recommended that you thoroughly review the notes before the next hands-on session. This review will help solidify your understanding of the material and prepare you for active participation in the upcoming session.</p>
+<h2 id="topics-covered-in-the-previous-two-sessions"><a class="header" href="#topics-covered-in-the-previous-two-sessions">Topics covered in the previous two sessions</a></h2>
+<ul>
+<li><a href="Session1.html">Session 1</a></li>
+<li><a href="Session2.html">Session 2</a></li>
+</ul>
+<h2 id="modeling-workshop-session"><a class="header" href="#modeling-workshop-session">Modeling Workshop Session</a></h2>
+<p>In the second half of this introductory course, we will focus on modeling more complex shapes, utilizing modifiers to create natural distortions, and generating sophisticated generative textures. The culmination of these topics will be an aesthetically pleasing rendering of a wine bottle.</p>
+<p><img src="img/WineBottleRender.png" alt="Wireframe of Wine Bottle Model" title="Wireframe of Wine Bottle Model" /></p>
+<h2 id="review-of-syllabus-10"><a class="header" href="#review-of-syllabus-10">Review of syllabus (10)</a></h2>
+<h2 id="concepts-15"><a class="header" href="#concepts-15">Concepts (15)</a></h2>
+<ul>
+<li>Subdivision modeling</li>
+<li>Modifiers</li>
+<li>Texturing</li>
+<li>Procedural Textures</li>
+<li>Mapped Textures</li>
+</ul>
+<h2 id="todays-session-10"><a class="header" href="#todays-session-10">Today's Session (10)</a></h2>
+<p><img src="img/WineBottleWire.png" alt="Wireframe of Wine Bottle Model" title="Wireframe of Wine Bottle Model" /></p>
+<h3 id="core-concepts"><a class="header" href="#core-concepts">Core concepts</a></h3>
+<ul>
+<li>Subdivision Modeling</li>
+<li>Solidify Modifier</li>
+<li>Displacement Modifier</li>
+<li>Shrinkwrap Modifier</li>
+<li>Modifier Application</li>
+<li>Mesh Cleanup</li>
+<li>Activating and Utilizing Add-ons</li>
+<li>Use of Proportional Editing</li>
+<li>Creating and Modifying Curves</li>
+</ul>
+<h2 id="activating-add-ons-5"><a class="header" href="#activating-add-ons-5">Activating Add-ons (5)</a></h2>
+<ul>
+<li>Activating the Loop Tools Add-on</li>
+<li>Activating the Node Wrangler Add-on</li>
+</ul>
+<h2 id="setting-up-our-user-interface-10"><a class="header" href="#setting-up-our-user-interface-10">Setting up our User Interface (10)</a></h2>
+<ul>
+<li>Creating Window Splits</li>
+<li>Creating Workspaces</li>
+<li>Turning on Pack External Resources</li>
+</ul>
+<h2 id="creating-the-bottle-45"><a class="header" href="#creating-the-bottle-45">Creating The Bottle (45)</a></h2>
+<ul>
+<li>Creating a Cylinder</li>
+<li>Deleting Cylinder Ends</li>
+<li>Resizing the Cylinder</li>
+<li>Extruding the Cylinder</li>
+<li>Resizing Loops</li>
+<li>Applying the Subdivision Modifier</li>
+<li>Adding a Solidify Modifier</li>
+<li>Applying Both Modifiers</li>
+<li>Editing Mesh with Loop Tools</li>
+<li>Proportionally Editing the Bottom</li>
+<li>Filling an Open Hole</li>
+<li>Adding and Adjusting Loop-Cuts</li>
+<li>Applying a Displacement Modifier</li>
+<li>Using a Texture with the Modifier</li>
+</ul>
+<h1 id="break-15"><a class="header" href="#break-15">Break (15)</a></h1>
+<h2 id="creating-a-label-ring-with-a-cylinder-10"><a class="header" href="#creating-a-label-ring-with-a-cylinder-10">Creating a Label Ring with a Cylinder (10)</a></h2>
+<ul>
+<li>Adding a Cylinder</li>
+<li>Isolating with the (?) key</li>
+<li>Deleting both Ends</li>
+<li>Rotating</li>
+<li>Exiting Isolation with the (?) key</li>
+<li>Sizing to the Bottle</li>
+<li>Adjusting Position</li>
+</ul>
+<h2 id="creating-the-cork-15"><a class="header" href="#creating-the-cork-15">Creating the Cork (15)</a></h2>
+<ul>
+<li>Extruding</li>
+<li>Loop Cuts</li>
+<li>Bevel Tool</li>
+</ul>
+<h2 id="creating-the-wax-dipped-top-20"><a class="header" href="#creating-the-wax-dipped-top-20">Creating the Wax Dipped Top (20)</a></h2>
+<ul>
+<li>Duplicating Faces</li>
+<li>Separating the Duplicated Faces</li>
+<li>Modeling the Duplicated Mesh</li>
+<li>Thickening the Mesh using the Solidify Modifier</li>
+<li>Applying the Modifier</li>
+<li>Applying Bevels</li>
+<li>Subdividing</li>
+<li>Smoothing Shading</li>
+</ul>
+<h2 id="creating-the-wax-seal-15"><a class="header" href="#creating-the-wax-seal-15">Creating the Wax Seal (15)</a></h2>
+<ul>
+<li>Adding a Circle</li>
+<li>Grid Filling the Circle</li>
+<li>Adding the Solidify Modifier</li>
+<li>Applying the Modifier</li>
+<li>Insetting the Face</li>
+<li>Extruding the Face Inward</li>
+<li>Editing Mesh Points for Wax Drip Effect</li>
+<li>Applying Subdivision Modifier</li>
+<li>Smoothing Shading</li>
+</ul>
+<h2 id="creating-the-string-10"><a class="header" href="#creating-the-string-10">Creating the String (10)</a></h2>
+<ul>
+<li>Adding a NURBS Curve</li>
+<li>Positioning the NURBS Curve</li>
+<li>Subdividing and Bending</li>
+<li>Adding a Profile to the Curve</li>
+</ul>
+<h2 id="creating-the-backdrop-10"><a class="header" href="#creating-the-backdrop-10">Creating the Backdrop (10)</a></h2>
+<ul>
+<li>Adding a Plane</li>
+<li>Scaling the Plane</li>
+<li>Applying Scale</li>
+<li>Extruding Back</li>
+<li>Beveling</li>
+</ul>
+<h2 id="next-week"><a class="header" href="#next-week">Next Week</a></h2>
+<p>Will will be creating and applying textures, placing lighting and setting up the rendering of this wine bottle project.</p>
+<h1 id="downloads"><a class="header" href="#downloads">Downloads</a></h1>
+<h2 id="download-wine-bottle-modelling-demo-blender-file"><a class="header" href="#download-wine-bottle-modelling-demo-blender-file"><a href="dl/WineBottle/WineBottleModellingDemo.zip">Download Wine Bottle Modelling Demo Blender File</a></a></h2>
+<h2 id="download-wine-bottle-blender-file"><a class="header" href="#download-wine-bottle-blender-file"><a href="dl/WineBottle/WineBottle.blend">Download Wine Bottle Blender File</a></a></h2>
+<h2 id="download-image-of-wine-bottle-wireframe"><a class="header" href="#download-image-of-wine-bottle-wireframe"><a href="dl/WineBottle/WineBottleWire.png">Download Image of Wine Bottle Wireframe</a></a></h2>
+<h2 id="download-image-of-final-render-example"><a class="header" href="#download-image-of-final-render-example"><a href="dl/WineBottle/WineBottleRender.png">Download Image of final render example</a></a></h2>
+<h2 id="download-label-image"><a class="header" href="#download-label-image"><a href="dl/WineBottle/Label.png">Download Label Image</a></a></h2>
+<h2 id="download-blender-logo"><a class="header" href="#download-blender-logo"><a href="dl/WineBottle/BlenderLogo.png">Download Blender Logo</a></a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="session-4"><a class="header" href="#session-4">Session #4</a></h1>
+<h2 id="texturing-workshop-session"><a class="header" href="#texturing-workshop-session">Texturing Workshop Session</a></h2>
+<p>We will focus on creating, customizing, and applying procedural textures. Furthermore, we will explore the use of simple mapped image textures to understand how they work. After covering texturing, we will proceed to set up the scene to create a visually appealing rendering.</p>
+<h2 id="comparing-procedural-and-mapped-textures"><a class="header" href="#comparing-procedural-and-mapped-textures">Comparing Procedural and Mapped Textures</a></h2>
+<h3 id="procedurally-generated-textures"><a class="header" href="#procedurally-generated-textures">Procedurally Generated Textures:</a></h3>
+<ul>
+<li>Instant Tweaks</li>
+<li>Can be animated</li>
+<li>Generally take up less space</li>
+<li>Can be Tedious</li>
+</ul>
+<h3 id="mapped-textures-uv-or-projected"><a class="header" href="#mapped-textures-uv-or-projected">Mapped Textures (UV or Projected)</a></h3>
+<ul>
+<li>Render efficiently</li>
+<li>Transport between applications</li>
+<li>Offers more control</li>
+<li>More widely used</li>
+</ul>
+<h2 id="setting-up-our-workspace-for-texturing"><a class="header" href="#setting-up-our-workspace-for-texturing">Setting up our workspace for texturing</a></h2>
+<ul>
+<li>Window splits</li>
+<li>Changing workspaces</li>
+<li>Downloading resource files</li>
+<li>Creating blank textures</li>
+</ul>
+<h2 id="building-our-first-procedural-texture"><a class="header" href="#building-our-first-procedural-texture">Building our first procedural texture</a></h2>
+<p>We will start building our first procedural texture for our red dipped wax.</p>
+<p><img src="img/WaxTextureNodes.png" alt="Wax Texture Nodes" title="Wax Texture Nodes" /></p>
+<h2 id="building-our-second-procedural-texture-in-combination-with-our-first-mapped-texture"><a class="header" href="#building-our-second-procedural-texture-in-combination-with-our-first-mapped-texture">Building our second procedural texture in combination with our first mapped texture</a></h2>
+<p><img src="img/LabelTextureNodes.png" alt="Label Texture Nodes" title="Label Texture Nodes" /></p>
+<h2 id="building-our-third-procedural-texture"><a class="header" href="#building-our-third-procedural-texture">Building our third procedural texture</a></h2>
+<p><img src="img/GlassTextureNodes.png" alt="Glass Texture Nodes" title="Glass Texture Nodes" /></p>
+<h2 id="building-our-fourth-procedural-texture"><a class="header" href="#building-our-fourth-procedural-texture">Building our fourth procedural texture</a></h2>
+<p><img src="img/BackDropTextureNodes.png" alt="Back Drop Texture Nodes" title="Back Drop Texture Nodes" /></p>
+<h2 id="building-our-fifth-and-final-procedural-texture"><a class="header" href="#building-our-fifth-and-final-procedural-texture">Building our fifth and final procedural texture</a></h2>
+<h2 id="setting-up-our-camera-15"><a class="header" href="#setting-up-our-camera-15">Setting up our camera (15)</a></h2>
+<h2 id="setting-up-our-focus-object-15"><a class="header" href="#setting-up-our-focus-object-15">Setting up our Focus Object (15)</a></h2>
+<h2 id="setting-scene-15"><a class="header" href="#setting-scene-15">Setting scene (15)</a></h2>
+<h2 id="rendering-out-our-project-15"><a class="header" href="#rendering-out-our-project-15">Rendering out our project (15)</a></h2>
+<h1 id="downloads-1"><a class="header" href="#downloads-1">Downloads</a></h1>
+<h2 id="download-un-textured-wine-bottle-blender-file"><a class="header" href="#download-un-textured-wine-bottle-blender-file"><a href="dl/WineBottle/WineBottleModellingDemo.zip">Download Un-Textured Wine Bottle Blender File</a></a></h2>
+<h2 id="download-textured-wine-bottle-blender-file"><a class="header" href="#download-textured-wine-bottle-blender-file"><a href="dl/WineBottle/WineBottle.blend">Download Textured Wine Bottle Blender File</a></a></h2>
+<h2 id="download-image-of-wine-bottle-wireframe-1"><a class="header" href="#download-image-of-wine-bottle-wireframe-1"><a href="dl/WineBottle/WineBottleWire.png">Download Image of Wine Bottle Wireframe</a></a></h2>
+<h2 id="download-image-of-final-render-example-1"><a class="header" href="#download-image-of-final-render-example-1"><a href="dl/WineBottle/WineBottleRender.png">Download Image of final render example</a></a></h2>
+<h2 id="download-label-image-1"><a class="header" href="#download-label-image-1"><a href="dl/WineBottle/Label.png">Download Label Image</a></a></h2>
+<h2 id="download-blender-logo-1"><a class="header" href="#download-blender-logo-1"><a href="dl/WineBottle/BlenderLogo.png">Download Blender Logo</a></a></h2>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>

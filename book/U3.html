@@ -1,0 +1,349 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Unit 3 - Intro to Blender</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Intro to Blender</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="session-3"><a class="header" href="#session-3">Session #3</a></h1>
+<h2 id="course-intro"><a class="header" href="#course-intro">Course Intro</a></h2>
+<p>In this second half of Intro to Blender, we will follow a lecture format with demonstrations. I strongly encourage you to actively participate by trying to mimic the demos as they are presented. This hands-on approach will enhance your learning experience and allow you to gain practical skills by actively engaging with the material.</p>
+<p>Given the extensive amount of concepts to cover during these three hours, it is highly recommended that you thoroughly review the notes before the next hands-on session. This review will help solidify your understanding of the material and prepare you for active participation in the upcoming session.</p>
+<h2 id="topics-covered-in-the-previous-two-sessions"><a class="header" href="#topics-covered-in-the-previous-two-sessions">Topics covered in the previous two sessions</a></h2>
+<ul>
+<li><a href="Session1.html">Session 1</a></li>
+<li><a href="Session2.html">Session 2</a></li>
+</ul>
+<h2 id="modeling-workshop-session"><a class="header" href="#modeling-workshop-session">Modeling Workshop Session</a></h2>
+<p>In the second half of this introductory course, we will focus on modeling more complex shapes, utilizing modifiers to create natural distortions, and generating sophisticated generative textures. The culmination of these topics will be an aesthetically pleasing rendering of a wine bottle.</p>
+<p><img src="img/WineBottleRender.png" alt="Wireframe of Wine Bottle Model" title="Wireframe of Wine Bottle Model" /></p>
+<h2 id="review-of-syllabus-10"><a class="header" href="#review-of-syllabus-10">Review of syllabus (10)</a></h2>
+<h2 id="concepts-15"><a class="header" href="#concepts-15">Concepts (15)</a></h2>
+<ul>
+<li>Subdivision modeling</li>
+<li>Modifiers</li>
+<li>Texturing</li>
+<li>Procedural Textures</li>
+<li>Mapped Textures</li>
+</ul>
+<h2 id="todays-session-10"><a class="header" href="#todays-session-10">Today's Session (10)</a></h2>
+<p><img src="img/WineBottleWire.png" alt="Wireframe of Wine Bottle Model" title="Wireframe of Wine Bottle Model" /></p>
+<h3 id="core-concepts"><a class="header" href="#core-concepts">Core concepts</a></h3>
+<ul>
+<li>Subdivision Modeling</li>
+<li>Solidify Modifier</li>
+<li>Displacement Modifier</li>
+<li>Shrinkwrap Modifier</li>
+<li>Modifier Application</li>
+<li>Mesh Cleanup</li>
+<li>Activating and Utilizing Add-ons</li>
+<li>Use of Proportional Editing</li>
+<li>Creating and Modifying Curves</li>
+</ul>
+<h2 id="activating-add-ons-5"><a class="header" href="#activating-add-ons-5">Activating Add-ons (5)</a></h2>
+<ul>
+<li>Activating the Loop Tools Add-on</li>
+<li>Activating the Node Wrangler Add-on</li>
+</ul>
+<h2 id="setting-up-our-user-interface-10"><a class="header" href="#setting-up-our-user-interface-10">Setting up our User Interface (10)</a></h2>
+<ul>
+<li>Creating Window Splits</li>
+<li>Creating Workspaces</li>
+<li>Turning on Pack External Resources</li>
+</ul>
+<h2 id="creating-the-bottle-45"><a class="header" href="#creating-the-bottle-45">Creating The Bottle (45)</a></h2>
+<ul>
+<li>Creating a Cylinder</li>
+<li>Deleting Cylinder Ends</li>
+<li>Resizing the Cylinder</li>
+<li>Extruding the Cylinder</li>
+<li>Resizing Loops</li>
+<li>Applying the Subdivision Modifier</li>
+<li>Adding a Solidify Modifier</li>
+<li>Applying Both Modifiers</li>
+<li>Editing Mesh with Loop Tools</li>
+<li>Proportionally Editing the Bottom</li>
+<li>Filling an Open Hole</li>
+<li>Adding and Adjusting Loop-Cuts</li>
+<li>Applying a Displacement Modifier</li>
+<li>Using a Texture with the Modifier</li>
+</ul>
+<h1 id="break-15"><a class="header" href="#break-15">Break (15)</a></h1>
+<h2 id="creating-a-label-ring-with-a-cylinder-10"><a class="header" href="#creating-a-label-ring-with-a-cylinder-10">Creating a Label Ring with a Cylinder (10)</a></h2>
+<ul>
+<li>Adding a Cylinder</li>
+<li>Isolating with the (?) key</li>
+<li>Deleting both Ends</li>
+<li>Rotating</li>
+<li>Exiting Isolation with the (?) key</li>
+<li>Sizing to the Bottle</li>
+<li>Adjusting Position</li>
+</ul>
+<h2 id="creating-the-cork-15"><a class="header" href="#creating-the-cork-15">Creating the Cork (15)</a></h2>
+<ul>
+<li>Extruding</li>
+<li>Loop Cuts</li>
+<li>Bevel Tool</li>
+</ul>
+<h2 id="creating-the-wax-dipped-top-20"><a class="header" href="#creating-the-wax-dipped-top-20">Creating the Wax Dipped Top (20)</a></h2>
+<ul>
+<li>Duplicating Faces</li>
+<li>Separating the Duplicated Faces</li>
+<li>Modeling the Duplicated Mesh</li>
+<li>Thickening the Mesh using the Solidify Modifier</li>
+<li>Applying the Modifier</li>
+<li>Applying Bevels</li>
+<li>Subdividing</li>
+<li>Smoothing Shading</li>
+</ul>
+<h2 id="creating-the-wax-seal-15"><a class="header" href="#creating-the-wax-seal-15">Creating the Wax Seal (15)</a></h2>
+<ul>
+<li>Adding a Circle</li>
+<li>Grid Filling the Circle</li>
+<li>Adding the Solidify Modifier</li>
+<li>Applying the Modifier</li>
+<li>Insetting the Face</li>
+<li>Extruding the Face Inward</li>
+<li>Editing Mesh Points for Wax Drip Effect</li>
+<li>Applying Subdivision Modifier</li>
+<li>Smoothing Shading</li>
+</ul>
+<h2 id="creating-the-string-10"><a class="header" href="#creating-the-string-10">Creating the String (10)</a></h2>
+<ul>
+<li>Adding a NURBS Curve</li>
+<li>Positioning the NURBS Curve</li>
+<li>Subdividing and Bending</li>
+<li>Adding a Profile to the Curve</li>
+</ul>
+<h2 id="creating-the-backdrop-10"><a class="header" href="#creating-the-backdrop-10">Creating the Backdrop (10)</a></h2>
+<ul>
+<li>Adding a Plane</li>
+<li>Scaling the Plane</li>
+<li>Applying Scale</li>
+<li>Extruding Back</li>
+<li>Beveling</li>
+</ul>
+<h2 id="next-week"><a class="header" href="#next-week">Next Week</a></h2>
+<p>Will will be creating and applying textures, placing lighting and setting up the rendering of this wine bottle project.</p>
+<h1 id="downloads"><a class="header" href="#downloads">Downloads</a></h1>
+<h2 id="download-wine-bottle-modelling-demo-blender-file"><a class="header" href="#download-wine-bottle-modelling-demo-blender-file"><a href="dl/WineBottle/WineBottleModellingDemo.zip">Download Wine Bottle Modelling Demo Blender File</a></a></h2>
+<h2 id="download-wine-bottle-blender-file"><a class="header" href="#download-wine-bottle-blender-file"><a href="dl/WineBottle/WineBottle.blend">Download Wine Bottle Blender File</a></a></h2>
+<h2 id="download-image-of-wine-bottle-wireframe"><a class="header" href="#download-image-of-wine-bottle-wireframe"><a href="dl/WineBottle/WineBottleWire.png">Download Image of Wine Bottle Wireframe</a></a></h2>
+<h2 id="download-image-of-final-render-example"><a class="header" href="#download-image-of-final-render-example"><a href="dl/WineBottle/WineBottleRender.png">Download Image of final render example</a></a></h2>
+<h2 id="download-label-image"><a class="header" href="#download-label-image"><a href="dl/WineBottle/Label.png">Download Label Image</a></a></h2>
+<h2 id="download-blender-logo"><a class="header" href="#download-blender-logo"><a href="dl/WineBottle/BlenderLogo.png">Download Blender Logo</a></a></h2>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="binresources.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="U4.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="binresources.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="U4.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
