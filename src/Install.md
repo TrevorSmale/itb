@@ -6,9 +6,9 @@ Downloading and installing Blender is normally a straightforward process. Howeve
 
 ## B) Recommended Blender version
 
-Blender is under constant development meaning there are small incremental releases happening weekly. Implementing small changes on a constant basis can cause instability or bugs to the end user. I recommend downloading a Long Term Release version as these versions are intended for studios that favor reliability over new features. The latest (LTS) release version is version 3.3.3
+Blender is under constant development meaning there are small incremental releases happening weekly. Implementing small changes on a constant basis can cause instability or bugs to the end user. I recommend downloading a Long Term Release version as these versions are intended for studios that favor reliability over new features. The latest (LTS) release version is version 4.2
 
-[Direct Link to 3.3 LTS release download](https://www.blender.org/download/lts/3-3/ "Blender LTS page")
+[Direct Link to 4.2 LTS release download](https://www.blender.org/download/lts/4-2/ "Blender LTS page")
 
 ## C) Running a demo file
 

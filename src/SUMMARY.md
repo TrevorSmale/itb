@@ -45,6 +45,3 @@
     - [Final Render](./binrender.md)
     - [Resources](./binresources.md)
     
-- [Unit 3](./U3.md)
-- [Unit 4](./U4.md)
-
