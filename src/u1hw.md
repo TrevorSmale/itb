@@ -1,3 +1,11 @@
-# Homework (If possible)
+# Homework (If Possible)  
 
-Please take a moment to scroll back through this page and review each section, testing the techniques mentioned along the way. Additionally, Session #2 is available for your review if you are interested in previewing what we will be building next week. Feel free to explore and familiarize yourself with the upcoming content.
+### **Review & Practice**  
+- Scroll back through this page and **review each section**.  
+- Test the **techniques** mentioned to reinforce learning.  
+
+### **Preview Next Session**  
+- **Session #2** is available for review.  
+- Explore the upcoming content to **familiarize yourself** with what we’ll be building next week.  
+
+Feel free to **experiment and explore** beyond the material to deepen your understanding! 🚀  

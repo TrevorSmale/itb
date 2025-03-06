@@ -1,8 +1,10 @@
-## Sidebar Menu
+## Sidebar Menu  
 
-[Link to Manual Page](https://docs.blender.org/manual/en/latest/interface/window_system/regions.html#sidebar)
+[Blender Manual: Sidebar](https://docs.blender.org/manual/en/latest/interface/window_system/regions.html#sidebar)  
 
-- **Hide Show Sidebar** N or Click Tab
-- **Item Menu** Demonstration
-- **Tool Menu** Demonstration
-- **View Menu** Demonstration
+### **Controls**  
+
+- **Toggle Sidebar** – Press `N` or click the **Tab** in the viewport.  
+- **Item Menu** – *(Demonstration required)*  
+- **Tool Menu** – *(Demonstration required)*  
+- **View Menu** – *(Demonstration required)*  
