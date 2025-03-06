@@ -1,12 +1,14 @@
-### Isolation & Exit isolation
+## Isolation & Exit Isolation  
 
-#### Isolation Mode
+### Isolation Mode  
 
-- Select the object or objects you want to isolate.
-- Press the forward slash key (/) on the keyboard.
-- Blender will enter isolation mode, hiding all other objects except for the selected ones.
+- **Select Object(s)** – Choose the object(s) you want to isolate.  
+- **Activate Isolation** – Press `/` (Forward Slash).  
+- **View in Isolation** – All other objects will be hidden.  
 
-#### Exiting Isolation Mode
+---
 
-- To exit isolation mode, press the forward slash key (/) again.
-- Blender will return to the regular view, showing all objects in the scene.
+### Exiting Isolation Mode  
+
+- **Exit Isolation** – Press `/` again.  
+- **Restore View** – All objects in the scene will reappear.  

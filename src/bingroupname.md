@@ -1,21 +1,25 @@
-### Scene setup & Management (Grouping & Naming)
+## Scene Setup & Management (Grouping & Naming)  
 
-#### Grouping Objects:
+### Grouping Objects  
 
-4. Select the objects you want to group together. You can select multiple objects by holding down the Shift key while clicking on each object.
+- **Select Objects** – Hold `Shift` and click multiple objects in the **3D Viewport**.  
+- **Create a Group** – Press `Ctrl + G` to group selected objects.  
+- **Name the Group** – Enter a descriptive name in the pop-up window and press `Enter`.  
+ **Group Confirmed** – The objects are now grouped under the specified name.  
 
-* Press Ctrl + G to create a new group. A pop-up window will appear, allowing you to name the group. Enter a descriptive name for the group and press Enter to confirm.
+---
 
-* The selected objects are now grouped together under the specified name.
+### Naming Objects  
 
-#### Naming Objects:
+- **Select Object** – Click an object in the **3D Viewport**.  
+- **Open Object Properties** – Press `N` to open the **Sidebar**, then go to the **Object tab**.  
+- **Rename the Object** – Enter a new name in the **Name field** under the "Object" section.  
+- **Confirm Name** – Press `Enter` to apply the name.  
+- **Repeat for Other Objects** – Assign meaningful names to keep your scene organized.  
 
-* Select an object by clicking on it in the 3D viewport.
+---
 
-* In the "Object" tab of the Properties panel (located in the sidebar on the right-hand side of the Blender interface, usually accessed by pressing the N key), locate the "Object" section.
-
-* Find the "Name" field under the "Object" section and enter a meaningful name for the object.
-
-* Press Enter to confirm the new name.
-
-* Repeat this process for each object in your scene, giving them descriptive names to help organize and identify them easily.
+### **Why Group & Name Objects?**  
+- **Easier scene organization** in complex projects.  
+- **Faster object selection & management** in large environments.  
+- **Improves collaboration** when sharing Blender files.  

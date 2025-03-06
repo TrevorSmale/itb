@@ -1,17 +1,19 @@
-### Duplicating and separating faces
+## Duplicating and Separating Faces  
 
-#### Duplicating Faces
+### Duplicating Faces  
 
-- Enter Edit Mode (Tab).
-- Select the faces you want to duplicate using the selection tools like right-clicking, box selection (B), or circle selection (C).
-- Press Shift + D to duplicate the selected faces.
-- Move the duplicated faces to the desired location by translating, rotating, or scaling them.
-- Left-click or press Enter to confirm the placement of the duplicated faces.
+- **Enter Edit Mode** – Press `Tab`.  
+- **Select Faces** – Use `Right-click`, `B` (Box Select), or `C` (Circle Select).  
+- **Duplicate** – Press `Shift + D` to create a copy.  
+- **Move & Transform** – Translate, rotate, or scale as needed.  
+- **Confirm Placement** – `Left-click` or press `Enter`.  
 
-#### Separating Faces
+---
 
-- Enter Edit Mode (Tab).
-- Select the faces you want to separate using the selection tools like right-clicking, box selection (B), or circle selection (C).
-- Press P to open the Separate menu.
-- Choose "Selection" from the Separate menu options to separate the selected faces into a new object.
-- The separated faces will now be in a new object, while the original object retains the remaining faces.
+### Separating Faces  
+
+- **Enter Edit Mode** – Press `Tab`.  
+- **Select Faces** – Use `Right-click`, `B` (Box Select), or `C` (Circle Select).  
+- **Open Separate Menu** – Press `P`.  
+- **Choose "Selection"** – Splits selected faces into a new object.  
+- **Confirm** – The separated faces become a new object, leaving the original intact.  

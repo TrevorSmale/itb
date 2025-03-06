@@ -1,25 +1,24 @@
-### Applying Single & Multiple materials to a single objects
+## Applying Single & Multiple Materials to a Single Object  
 
-Applying a Single Material
+### Applying a Single Material  
 
-* With the material slot selected, click the "New" button to create a new material. By default, it will be named "Material".
+- **Create a Material** – Click `New` in the **Material Properties** tab.  
+- **Adjust Material Properties** – Modify **color, roughness, and other attributes**.  
+- **Automatic Assignment** – The material applies to the entire object.  
 
-* Adjust the properties of the material, such as its color, roughness, or any other desired attributes, using the various options available in the material settings.
+---
 
-* The single material is automatically assigned to the entire object.
+### Applying Multiple Materials  
 
-Applying Multiple Materials
+- **Add Material Slots** – Click `+` in the **Material List** to add additional slots.  
+- **Create Materials** – With each new slot selected, click `New` to create materials (e.g., `"Material.001"`).  
+- **Enter Edit Mode** – Press `Tab`.  
+- **Select Faces** – Use `Right-click`, `B` (Box Select), or `C` (Circle Select).  
+- **Assign Materials** – Choose the material from the **Material dropdown**, then click `Assign`.  
 
-* To apply multiple materials, click the "+" button next to the material list to add additional material slots for the selected object.
+---
 
-* With a new material slot selected, click the "New" button to create a new material. By default, it will be named "Material.001". Repeat this step for each additional material you want to apply.
-
-* Adjust the properties of each material as desired.
-
-* In Edit Mode, select the faces or parts of the object to which you want to assign a specific material.
-
-* In the material slots, click the material dropdown menu for the selected faces or parts, and choose the desired material name from the list. Repeat this step for each material you want to assign to different parts of the object.
-
-* The selected faces or parts will now have the assigned material(s), and you can adjust the properties of each material individually to achieve different visual effects.
-
-By applying single or multiple materials to a single object, you can create complex and visually appealing models with varied appearances for different parts or components of the object.
+### **Why Use Multiple Materials?**  
+- Enables **different textures and colors** on a single object.  
+- Allows for **realistic material combinations** (e.g., metal and plastic on a model).  
+- Improves **visual complexity** for games, animations, and renders.  

@@ -1,17 +1,37 @@
-### Inseting, Extruding and Scaling faces
+## Insetting, Extruding, and Scaling Faces  
 
-* Enter Edit Mode by selecting the object and pressing the Tab key.
+1. **Enter Edit Mode**  
+   - Select the object and press `Tab`.  
 
-* Select the face or faces you want to manipulate. You can use selection tools like right-clicking, box selection (B), or circle selection (C) to choose the desired faces.
+2. **Select the face(s) to manipulate**  
+   - Use selection tools:  
+     - `Right-click` for single selection.  
+     - `B` for **Box Selection**.  
+     - `C` for **Circle Selection**.  
 
-* To inset the selected faces, press the I key. You can control the inset depth by moving the mouse or inputting specific numerical values. Left-click or press Enter to confirm the inset.
+3. **Inset Faces**  
+   - Press `I` to inset the selected faces.  
+   - Move the mouse to control the **inset depth** or enter numerical values.  
+   - `Left-click` or press `Enter` to confirm.  
 
-* To extrude the selected faces, press the E key. Move the mouse or enter numerical values to define the extrusion distance or direction. Left-click to confirm the extrusion.
+4. **Extrude Faces**  
+   - Press `E` to extrude the selected faces.  
+   - Move the mouse or enter numerical values to define **extrusion distance** or **direction**.  
+   - `Left-click` to confirm.  
 
-* To scale the selected faces, press the S key. Move the mouse to scale the faces interactively or input numerical values for precise scaling. Left-click to confirm the scaling.
+5. **Scale Faces**  
+   - Press `S` to scale the selected faces.  
+   - Move the mouse to scale interactively or enter numerical values for **precise scaling**.  
+   - `Left-click` to confirm.  
 
-* You can also constrain the extrusion or scaling to a specific axis by pressing X, Y, or Z after initiating the extrusion or scaling operation. This constrains the operation to the corresponding axis.
+6. **Axis Constraints** (Optional)  
+   - After initiating an **extrusion** or **scaling** operation, press:  
+     - `X` to constrain to the **X-axis**.  
+     - `Y` to constrain to the **Y-axis**.  
+     - `Z` to constrain to the **Z-axis**.  
 
-* After performing the desired transformations, you can further manipulate the geometry by translating, rotating, or scaling the newly created faces or vertices.
+7. **Further Editing**  
+   - You can refine the geometry further by **translating (G), rotating (R), or scaling (S)** the newly created faces or vertices.  
 
-* To exit Edit Mode, press the Tab key again.
+8. **Exit Edit Mode**  
+   - Press `Tab` again to return to **Object Mode**.  
