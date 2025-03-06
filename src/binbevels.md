@@ -1,8 +1,10 @@
-### Applying Bevels
+## Applying Bevels
 
-* elect the cylinder object in Edit Mode (Tab).
-* hoose the end faces you want to bevel using selection tools like right-clicking, box selection (B), or circle selection (C).
-* o to the "Mesh" menu and select "Bevel" or "Bevel Faces".
-* djust the bevel settings in the Bevel tool options.* Confirm the operation by left-clicking or pressing Enter.
-
-Shortcut: Tab to switch to Edit Mode, B for box selection, C for circle selection.
+- Select the cylinder object in **Edit Mode** by pressing `Tab`.
+- Choose the end faces you want to bevel using selection tools:
+  - `Right-click` to select a face.
+  - Use `B` for box selection.
+  - Use `C` for circle selection.
+- Go to the `Mesh` menu and select `Bevel` or `Bevel Faces`.
+- Adjust the bevel settings in the **Bevel Tool Options**.
+- Confirm the operation by `Left-clicking` or pressing `Enter`.
